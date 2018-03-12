@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  WXChatList.h
 //  renew
 //
 //  Created by younghacker on 3/12/18.
@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
 
+@interface WXChatListViewController : BaseViewController
 
 @end
-
