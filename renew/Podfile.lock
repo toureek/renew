@@ -1,0 +1,17 @@
+PODS:
+  - Mantle (2.1.0):
+    - Mantle/extobjc (= 2.1.0)
+  - Mantle/extobjc (2.1.0)
+  - SVProgressHUD (2.2.5)
+
+DEPENDENCIES:
+  - Mantle (= 2.1.0)
+  - SVProgressHUD (= 2.2.5)
+
+SPEC CHECKSUMS:
+  Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+
+PODFILE CHECKSUM: 2a26f6f4fafe21e8f2fc291f8989e83c33ba8577
+
+COCOAPODS: 1.4.0

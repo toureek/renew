@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C6E7A5A4151F97E44F5FEA3 /* libPods-renew.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E3BAE9E92B6FEBF2A9B67C /* libPods-renew.a */; };
+		BF678F022057C81400F561CB /* pinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = BF678F012057C81400F561CB /* pinyin.m */; };
 		BFB3B8102056B0250085E6D9 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB3B80F2056B0250085E6D9 /* BaseViewController.m */; };
 		BFB3B8152056B0250085E6D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFB3B8142056B0250085E6D9 /* Assets.xcassets */; };
 		BFB3B81B2056B0250085E6D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB3B81A2056B0250085E6D9 /* main.m */; };
@@ -31,6 +33,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		620D7448F4709DB0366C4F5E /* Pods-renew.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-renew.debug.xcconfig"; path = "Pods/Target Support Files/Pods-renew/Pods-renew.debug.xcconfig"; sourceTree = "<group>"; };
+		BF678F002057C81400F561CB /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pinyin.h; sourceTree = "<group>"; };
+		BF678F012057C81400F561CB /* pinyin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pinyin.m; sourceTree = "<group>"; };
 		BFB3B8082056B0250085E6D9 /* renew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = renew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB3B80E2056B0250085E6D9 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		BFB3B80F2056B0250085E6D9 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
@@ -55,6 +60,8 @@
 		BFB3B8572056B7FB0085E6D9 /* WXDiscoverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXDiscoverViewController.m; sourceTree = "<group>"; };
 		BFB3B85C2056B8270085E6D9 /* WXMeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXMeViewController.h; sourceTree = "<group>"; };
 		BFB3B85D2056B8270085E6D9 /* WXMeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXMeViewController.m; sourceTree = "<group>"; };
+		C5E3BAE9E92B6FEBF2A9B67C /* libPods-renew.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-renew.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA521A43346DA3DF3117DEAD /* Pods-renew.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-renew.release.xcconfig"; path = "Pods/Target Support Files/Pods-renew/Pods-renew.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C6E7A5A4151F97E44F5FEA3 /* libPods-renew.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,12 +83,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33BCF53DE0512F832CA68CB1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				620D7448F4709DB0366C4F5E /* Pods-renew.debug.xcconfig */,
+				DA521A43346DA3DF3117DEAD /* Pods-renew.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BF678EFE2057C7F800F561CB /* ThirdPart */ = {
+			isa = PBXGroup;
+			children = (
+				BF678EFF2057C80100F561CB /* Pinyin */,
+			);
+			path = ThirdPart;
+			sourceTree = "<group>";
+		};
+		BF678EFF2057C80100F561CB /* Pinyin */ = {
+			isa = PBXGroup;
+			children = (
+				BF678F002057C81400F561CB /* pinyin.h */,
+				BF678F012057C81400F561CB /* pinyin.m */,
+			);
+			path = Pinyin;
+			sourceTree = "<group>";
+		};
 		BFB3B7FF2056B0250085E6D9 = {
 			isa = PBXGroup;
 			children = (
 				BFB3B80A2056B0250085E6D9 /* renew */,
 				BFB3B8232056B0250085E6D9 /* renewTests */,
 				BFB3B8092056B0250085E6D9 /* Products */,
+				33BCF53DE0512F832CA68CB1 /* Pods */,
+				F88CD17BA298C0A4111D5117 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,12 +132,12 @@
 		BFB3B80A2056B0250085E6D9 /* renew */ = {
 			isa = PBXGroup;
 			children = (
-				BFB3B83A2056B2CB0085E6D9 /* Supporting Files */,
-				BFB3B8392056B2AF0085E6D9 /* Wechat */,
-				BFB3B8382056B2A30085E6D9 /* Contact */,
-				BFB3B8372056B2990085E6D9 /* Discover */,
 				BFB3B8362056B28E0085E6D9 /* Me */,
+				BFB3B8372056B2990085E6D9 /* Discover */,
+				BFB3B8382056B2A30085E6D9 /* Contact */,
+				BFB3B8392056B2AF0085E6D9 /* Wechat */,
 				BFB3B8352056B2870085E6D9 /* Utils */,
+				BFB3B83A2056B2CB0085E6D9 /* Supporting Files */,
 			);
 			path = renew;
 			sourceTree = "<group>";
@@ -118,6 +154,7 @@
 		BFB3B8352056B2870085E6D9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				BF678EFE2057C7F800F561CB /* ThirdPart */,
 				BFB3B83C2056B36F0085E6D9 /* Categories */,
 				BFB3B83B2056B2E30085E6D9 /* UIKitor */,
 			);
@@ -289,6 +326,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		F88CD17BA298C0A4111D5117 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C5E3BAE9E92B6FEBF2A9B67C /* libPods-renew.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -296,9 +341,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BFB3B8292056B0250085E6D9 /* Build configuration list for PBXNativeTarget "renew" */;
 			buildPhases = (
+				A342FC49D1BEA096AB5D242E /* [CP] Check Pods Manifest.lock */,
 				BFB3B8042056B0250085E6D9 /* Sources */,
 				BFB3B8052056B0250085E6D9 /* Frameworks */,
 				BFB3B8062056B0250085E6D9 /* Resources */,
+				62F6A9DB89A7170ECA79F2F2 /* [CP] Embed Pods Frameworks */,
+				9A09DCC2C3E96E7E088BB0D9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -384,11 +432,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		62F6A9DB89A7170ECA79F2F2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-renew/Pods-renew-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A09DCC2C3E96E7E088BB0D9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-renew/Pods-renew-resources.sh",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-renew/Pods-renew-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A342FC49D1BEA096AB5D242E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-renew-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BFB3B8042056B0250085E6D9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF678F022057C81400F561CB /* pinyin.m in Sources */,
 				BFB3B8482056B5550085E6D9 /* WXChatListViewController.m in Sources */,
 				BFB3B8102056B0250085E6D9 /* BaseViewController.m in Sources */,
 				BFB3B8582056B7FB0085E6D9 /* WXDiscoverViewController.m in Sources */,
@@ -526,8 +629,11 @@
 		};
 		BFB3B82A2056B0250085E6D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 620D7448F4709DB0366C4F5E /* Pods-renew.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				CLANG_WARN_STRICT_PROTOTYPES = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 497KMMCX78;
 				GCC_PREFIX_HEADER = "renew/Supporting Files/Renew_Prefix.pch";
@@ -541,8 +647,11 @@
 		};
 		BFB3B82B2056B0250085E6D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA521A43346DA3DF3117DEAD /* Pods-renew.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				CLANG_WARN_STRICT_PROTOTYPES = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 497KMMCX78;
 				GCC_PREFIX_HEADER = "renew/Supporting Files/Renew_Prefix.pch";

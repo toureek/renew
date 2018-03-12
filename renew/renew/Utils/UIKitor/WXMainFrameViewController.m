@@ -22,7 +22,7 @@ NSString *const kTabBarTitleIndex2 = @"Discover";
 NSString *const kTabBarImageIndex3 = @"main_tab_index3";
 NSString *const kTabBarTitleIndex3 = @"Me";
 NSString *const kTabBarItemSelectedImageSuffix = @"%@_select";
-NSUInteger const kTotalTabBarCount = 4;
+static NSUInteger const kTotalTabBarCount = 4;
 
 @interface WXMainFrameViewController ()
 
@@ -90,6 +90,8 @@ NSUInteger const kTotalTabBarCount = 4;
     }
     else if (index == 3) {
         vc = [[WXMeViewController alloc] init];
+    } else {
+        return nil;
     }
     
     UIImage *iconImage = [UIImage imageNamed:imageName];
