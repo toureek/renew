@@ -11,15 +11,13 @@
 #import "WXUIFactory.h"
 #import <UIImageView+WebCache.h>
 
-
 NSString *const kWXMeHeaderTableViewCellTag = @"kWXMeHeaderTableViewCellTag";
 CGFloat const kWXMeHeaderTableViewCellHeight = 90.0f;
 CGFloat const kWXCommonLeftRightPaddingSpace = 15.0f;
 static CGFloat const kWXThinLeftRightPadddingSpace = 10.0f;
-static NSString *const kPlaceholderImageName = @"contactapp";
 static CGFloat const kWXAvatorImageSize = 70.0f;
 
-@interface WXMeHeaderTableViewCell()
+@interface WXMeHeaderTableViewCell ()
 
 @property (nonatomic, strong) UIImageView *avatorImageView;
 @property (nonatomic, strong) UILabel *nameLabel;

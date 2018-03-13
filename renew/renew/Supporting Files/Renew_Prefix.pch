@@ -13,6 +13,5 @@
 #import "BaseViewController.h"
 #import "UIColor+WXColor.h"
 
-#define IOS9_OR_GREATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0)
 
 #endif /* Renew_Prefix_h */

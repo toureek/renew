@@ -10,6 +10,8 @@
 #import "UIColor+WXColor.h"
 
 
+NSString *const kPlaceholderImageName = @"contactapp";
+
 @implementation UIColor (WXColor)
 
 + (UIColor *)WX_AppMainColor

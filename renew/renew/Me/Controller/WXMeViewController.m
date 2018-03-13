@@ -11,13 +11,11 @@
 #import "WXUserModel.h"
 
 
-
 NSString *const kDidFetchUserInfoNotificationReceived = @"kDidFetchUserInfoNotificationReceived";
 static CGFloat const kWXMeTableViewCellRowHeight = 45.0f;
 static CGFloat const kWXMeNormalHeaderViewHeight = 10.0f;
 static CGFloat const kWXMeLongHeaderViewHeight = 15.0f;
 static NSString *const kWXMeTableViewTag = @"kWXMeTableViewTag";
-
 
 @interface WXMeViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -48,7 +46,7 @@ static NSString *const kWXMeTableViewTag = @"kWXMeTableViewTag";
 
 - (void)initTableViewAndSetupLayout {
     _dataList = [WXUserModel meViewControllerDataSourceList];
-    
+
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     _tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
@@ -161,6 +159,5 @@ static NSString *const kWXMeTableViewTag = @"kWXMeTableViewTag";
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return CGFLOAT_MIN;
 }
-
 
 @end

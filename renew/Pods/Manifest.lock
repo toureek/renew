@@ -1,4 +1,19 @@
 PODS:
+  - AFNetworking (3.2.0):
+    - AFNetworking/NSURLSession (= 3.2.0)
+    - AFNetworking/Reachability (= 3.2.0)
+    - AFNetworking/Security (= 3.2.0)
+    - AFNetworking/Serialization (= 3.2.0)
+    - AFNetworking/UIKit (= 3.2.0)
+  - AFNetworking/NSURLSession (3.2.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.0)
+  - AFNetworking/Security (3.2.0)
+  - AFNetworking/Serialization (3.2.0)
+  - AFNetworking/UIKit (3.2.0):
+    - AFNetworking/NSURLSession
   - DACircularProgress (2.3.0)
   - Mantle (2.1.0):
     - Mantle/extobjc (= 2.1.0)
@@ -14,6 +29,7 @@ PODS:
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
+  - AFNetworking (= 3.2.0)
   - Mantle (= 2.1.0)
   - MWPhotoBrowser (from `https://github.com/toureek/MWPhotoBrowser.git`, commit `c7201e9e5593f52183591c3925f874b70d250b98`)
   - SVProgressHUD (= 2.2.5)
@@ -29,6 +45,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/toureek/MWPhotoBrowser.git
 
 SPEC CHECKSUMS:
+  AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
   DACircularProgress: 8e286f8d57a7ad279dee1ba75dbe401d46441838
   Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
@@ -36,6 +53,6 @@ SPEC CHECKSUMS:
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 304323bffb4e58fd1e3afbd52d952f9ec03a5f5e
+PODFILE CHECKSUM: 081abd5b8a2280128e6002540321a497c40b336c
 
 COCOAPODS: 1.4.0

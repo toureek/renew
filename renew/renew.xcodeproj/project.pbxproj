@@ -13,6 +13,9 @@
 		BF678F092057CCE100F561CB /* WXUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF678F082057CCE100F561CB /* WXUserModel.m */; };
 		BF678F0C2057CDE200F561CB /* WXMeHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF678F0B2057CDE200F561CB /* WXMeHeaderTableViewCell.m */; };
 		BF678F0F2057F16E00F561CB /* WXUIFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BF678F0E2057F16E00F561CB /* WXUIFactory.m */; };
+		BF678F122057F16E00F561CB /* WXContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF678F112057F16E00F561CB /* WXContactModel.m */; };
+		BF678F152057F16E00F561CB /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = BF678F142057F16E00F561CB /* NSString+Utils.m */; };
+		BF678F182057F16E00F561CB /* WXContactListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF678F172057F16E00F561CB /* WXContactListHeaderView.m */; };
 		BFB3B8102056B0250085E6D9 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB3B80F2056B0250085E6D9 /* BaseViewController.m */; };
 		BFB3B8152056B0250085E6D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFB3B8142056B0250085E6D9 /* Assets.xcassets */; };
 		BFB3B81B2056B0250085E6D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB3B81A2056B0250085E6D9 /* main.m */; };
@@ -48,6 +51,12 @@
 		BF678F0B2057CDE200F561CB /* WXMeHeaderTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXMeHeaderTableViewCell.m; sourceTree = "<group>"; };
 		BF678F0D2057F16E00F561CB /* WXUIFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXUIFactory.h; sourceTree = "<group>"; };
 		BF678F0E2057F16E00F561CB /* WXUIFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXUIFactory.m; sourceTree = "<group>"; };
+		BF678F102057F16E00F561CB /* WXContactModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXContactModel.h; sourceTree = "<group>"; };
+		BF678F112057F16E00F561CB /* WXContactModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXContactModel.m; sourceTree = "<group>"; };
+		BF678F132057F16E00F561CB /* NSString+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Utils.h"; sourceTree = "<group>"; };
+		BF678F142057F16E00F561CB /* NSString+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utils.m"; sourceTree = "<group>"; };
+		BF678F162057F16E00F561CB /* WXContactListHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXContactListHeaderView.h; sourceTree = "<group>"; };
+		BF678F172057F16E00F561CB /* WXContactListHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXContactListHeaderView.m; sourceTree = "<group>"; };
 		BFB3B8082056B0250085E6D9 /* renew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = renew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB3B80E2056B0250085E6D9 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		BFB3B80F2056B0250085E6D9 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
@@ -254,6 +263,8 @@
 			children = (
 				BFB3B83D2056B4310085E6D9 /* UIColor+WXColor.h */,
 				BFB3B83E2056B4310085E6D9 /* UIColor+WXColor.m */,
+				BF678F132057F16E00F561CB /* NSString+Utils.h */,
+				BF678F142057F16E00F561CB /* NSString+Utils.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -284,6 +295,8 @@
 		BFB3B84D2056B79B0085E6D9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BF678F102057F16E00F561CB /* WXContactModel.h */,
+				BF678F112057F16E00F561CB /* WXContactModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -291,6 +304,8 @@
 		BFB3B84E2056B7A60085E6D9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BF678F162057F16E00F561CB /* WXContactListHeaderView.h */,
+				BF678F172057F16E00F561CB /* WXContactListHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -522,12 +537,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF678F022057C81400F561CB /* pinyin.m in Sources */,
+				BF678F182057F16E00F561CB /* WXContactListHeaderView.m in Sources */,
 				BFB3B8482056B5550085E6D9 /* WXChatListViewController.m in Sources */,
 				BFB3B8102056B0250085E6D9 /* BaseViewController.m in Sources */,
 				BFB3B8582056B7FB0085E6D9 /* WXDiscoverViewController.m in Sources */,
 				BF678F062057CB2700F561CB /* WXBaseModel.m in Sources */,
 				BFB3B85E2056B8270085E6D9 /* WXMeViewController.m in Sources */,
 				BFB3B8342056B22C0085E6D9 /* WXAppDelegate.m in Sources */,
+				BF678F122057F16E00F561CB /* WXContactModel.m in Sources */,
 				BF678F092057CCE100F561CB /* WXUserModel.m in Sources */,
 				BFB3B83F2056B4310085E6D9 /* UIColor+WXColor.m in Sources */,
 				BFB3B81B2056B0250085E6D9 /* main.m in Sources */,
@@ -535,6 +552,7 @@
 				BF678F0F2057F16E00F561CB /* WXUIFactory.m in Sources */,
 				BFB3B8522056B7C80085E6D9 /* WXContactsListViewController.m in Sources */,
 				BFB3B8422056B4F30085E6D9 /* WXMainFrameViewController.m in Sources */,
+				BF678F152057F16E00F561CB /* NSString+Utils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

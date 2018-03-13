@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 
+extern NSString *const kPlaceholderImageName;
+
 @interface UIColor (WXColor)
 
 + (UIColor *)WX_AppMainColor;
