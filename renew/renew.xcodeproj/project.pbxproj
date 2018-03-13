@@ -16,6 +16,7 @@
 		BF678F122057F16E00F561CB /* WXContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF678F112057F16E00F561CB /* WXContactModel.m */; };
 		BF678F152057F16E00F561CB /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = BF678F142057F16E00F561CB /* NSString+Utils.m */; };
 		BF678F182057F16E00F561CB /* WXContactListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF678F172057F16E00F561CB /* WXContactListHeaderView.m */; };
+		BF678F1B2057F6F300F561CB /* WXTimeLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF678F1A2057F6F300F561CB /* WXTimeLineViewController.m */; };
 		BFB3B8102056B0250085E6D9 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB3B80F2056B0250085E6D9 /* BaseViewController.m */; };
 		BFB3B8152056B0250085E6D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFB3B8142056B0250085E6D9 /* Assets.xcassets */; };
 		BFB3B81B2056B0250085E6D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB3B81A2056B0250085E6D9 /* main.m */; };
@@ -57,6 +58,8 @@
 		BF678F142057F16E00F561CB /* NSString+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utils.m"; sourceTree = "<group>"; };
 		BF678F162057F16E00F561CB /* WXContactListHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXContactListHeaderView.h; sourceTree = "<group>"; };
 		BF678F172057F16E00F561CB /* WXContactListHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXContactListHeaderView.m; sourceTree = "<group>"; };
+		BF678F192057F6F300F561CB /* WXTimeLineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXTimeLineViewController.h; sourceTree = "<group>"; };
+		BF678F1A2057F6F300F561CB /* WXTimeLineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXTimeLineViewController.m; sourceTree = "<group>"; };
 		BFB3B8082056B0250085E6D9 /* renew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = renew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB3B80E2056B0250085E6D9 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		BFB3B80F2056B0250085E6D9 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
@@ -331,6 +334,8 @@
 			children = (
 				BFB3B8562056B7FB0085E6D9 /* WXDiscoverViewController.h */,
 				BFB3B8572056B7FB0085E6D9 /* WXDiscoverViewController.m */,
+				BF678F192057F6F300F561CB /* WXTimeLineViewController.h */,
+				BF678F1A2057F6F300F561CB /* WXTimeLineViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -546,6 +551,7 @@
 				BFB3B8342056B22C0085E6D9 /* WXAppDelegate.m in Sources */,
 				BF678F122057F16E00F561CB /* WXContactModel.m in Sources */,
 				BF678F092057CCE100F561CB /* WXUserModel.m in Sources */,
+				BF678F1B2057F6F300F561CB /* WXTimeLineViewController.m in Sources */,
 				BFB3B83F2056B4310085E6D9 /* UIColor+WXColor.m in Sources */,
 				BFB3B81B2056B0250085E6D9 /* main.m in Sources */,
 				BF678F0C2057CDE200F561CB /* WXMeHeaderTableViewCell.m in Sources */,
