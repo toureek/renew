@@ -1,17 +1,41 @@
 PODS:
+  - DACircularProgress (2.3.0)
   - Mantle (2.1.0):
     - Mantle/extobjc (= 2.1.0)
   - Mantle/extobjc (2.1.0)
+  - MBProgressHUD (0.9.2)
+  - MWPhotoBrowser (2.1.2):
+    - DACircularProgress (= 2.3)
+    - MBProgressHUD (= 0.9.2)
+    - SDWebImage (!= 3.7.2, ~> 3.7)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - Mantle (= 2.1.0)
+  - MWPhotoBrowser (from `https://github.com/toureek/MWPhotoBrowser.git`, commit `c7201e9e5593f52183591c3925f874b70d250b98`)
   - SVProgressHUD (= 2.2.5)
 
+EXTERNAL SOURCES:
+  MWPhotoBrowser:
+    :commit: c7201e9e5593f52183591c3925f874b70d250b98
+    :git: https://github.com/toureek/MWPhotoBrowser.git
+
+CHECKOUT OPTIONS:
+  MWPhotoBrowser:
+    :commit: c7201e9e5593f52183591c3925f874b70d250b98
+    :git: https://github.com/toureek/MWPhotoBrowser.git
+
 SPEC CHECKSUMS:
+  DACircularProgress: 8e286f8d57a7ad279dee1ba75dbe401d46441838
   Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  MWPhotoBrowser: dc565509c81c09afb94f271b16c2b6a78363d918
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 2a26f6f4fafe21e8f2fc291f8989e83c33ba8577
+PODFILE CHECKSUM: 304323bffb4e58fd1e3afbd52d952f9ec03a5f5e
 
 COCOAPODS: 1.4.0

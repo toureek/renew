@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0C6E7A5A4151F97E44F5FEA3 /* libPods-renew.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E3BAE9E92B6FEBF2A9B67C /* libPods-renew.a */; };
 		BF678F022057C81400F561CB /* pinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = BF678F012057C81400F561CB /* pinyin.m */; };
+		BF678F062057CB2700F561CB /* WXBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF678F052057CB2700F561CB /* WXBaseModel.m */; };
+		BF678F092057CCE100F561CB /* WXUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF678F082057CCE100F561CB /* WXUserModel.m */; };
+		BF678F0C2057CDE200F561CB /* WXMeHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF678F0B2057CDE200F561CB /* WXMeHeaderTableViewCell.m */; };
+		BF678F0F2057F16E00F561CB /* WXUIFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BF678F0E2057F16E00F561CB /* WXUIFactory.m */; };
 		BFB3B8102056B0250085E6D9 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB3B80F2056B0250085E6D9 /* BaseViewController.m */; };
 		BFB3B8152056B0250085E6D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFB3B8142056B0250085E6D9 /* Assets.xcassets */; };
 		BFB3B81B2056B0250085E6D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB3B81A2056B0250085E6D9 /* main.m */; };
@@ -36,6 +40,14 @@
 		620D7448F4709DB0366C4F5E /* Pods-renew.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-renew.debug.xcconfig"; path = "Pods/Target Support Files/Pods-renew/Pods-renew.debug.xcconfig"; sourceTree = "<group>"; };
 		BF678F002057C81400F561CB /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pinyin.h; sourceTree = "<group>"; };
 		BF678F012057C81400F561CB /* pinyin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pinyin.m; sourceTree = "<group>"; };
+		BF678F042057CB2700F561CB /* WXBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXBaseModel.h; sourceTree = "<group>"; };
+		BF678F052057CB2700F561CB /* WXBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXBaseModel.m; sourceTree = "<group>"; };
+		BF678F072057CCE100F561CB /* WXUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXUserModel.h; sourceTree = "<group>"; };
+		BF678F082057CCE100F561CB /* WXUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXUserModel.m; sourceTree = "<group>"; };
+		BF678F0A2057CDE200F561CB /* WXMeHeaderTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXMeHeaderTableViewCell.h; sourceTree = "<group>"; };
+		BF678F0B2057CDE200F561CB /* WXMeHeaderTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXMeHeaderTableViewCell.m; sourceTree = "<group>"; };
+		BF678F0D2057F16E00F561CB /* WXUIFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXUIFactory.h; sourceTree = "<group>"; };
+		BF678F0E2057F16E00F561CB /* WXUIFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXUIFactory.m; sourceTree = "<group>"; };
 		BFB3B8082056B0250085E6D9 /* renew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = renew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB3B80E2056B0250085E6D9 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		BFB3B80F2056B0250085E6D9 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
@@ -109,6 +121,15 @@
 			path = Pinyin;
 			sourceTree = "<group>";
 		};
+		BF678F032057CB0900F561CB /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				BF678F042057CB2700F561CB /* WXBaseModel.h */,
+				BF678F052057CB2700F561CB /* WXBaseModel.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		BFB3B7FF2056B0250085E6D9 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +175,7 @@
 		BFB3B8352056B2870085E6D9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				BF678F032057CB0900F561CB /* Base */,
 				BF678EFE2057C7F800F561CB /* ThirdPart */,
 				BFB3B83C2056B36F0085E6D9 /* Categories */,
 				BFB3B83B2056B2E30085E6D9 /* UIKitor */,
@@ -221,6 +243,8 @@
 				BFB3B80F2056B0250085E6D9 /* BaseViewController.m */,
 				BFB3B8402056B4F30085E6D9 /* WXMainFrameViewController.h */,
 				BFB3B8412056B4F30085E6D9 /* WXMainFrameViewController.m */,
+				BF678F0D2057F16E00F561CB /* WXUIFactory.h */,
+				BF678F0E2057F16E00F561CB /* WXUIFactory.m */,
 			);
 			path = UIKitor;
 			sourceTree = "<group>";
@@ -306,6 +330,8 @@
 		BFB3B8592056B8010085E6D9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BF678F072057CCE100F561CB /* WXUserModel.h */,
+				BF678F082057CCE100F561CB /* WXUserModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -313,6 +339,8 @@
 		BFB3B85A2056B80B0085E6D9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BF678F0A2057CDE200F561CB /* WXMeHeaderTableViewCell.h */,
+				BF678F0B2057CDE200F561CB /* WXMeHeaderTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -455,10 +483,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-renew/Pods-renew-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MWPhotoBrowser/MWPhotoBrowser.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MWPhotoBrowser.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,10 +525,14 @@
 				BFB3B8482056B5550085E6D9 /* WXChatListViewController.m in Sources */,
 				BFB3B8102056B0250085E6D9 /* BaseViewController.m in Sources */,
 				BFB3B8582056B7FB0085E6D9 /* WXDiscoverViewController.m in Sources */,
+				BF678F062057CB2700F561CB /* WXBaseModel.m in Sources */,
 				BFB3B85E2056B8270085E6D9 /* WXMeViewController.m in Sources */,
 				BFB3B8342056B22C0085E6D9 /* WXAppDelegate.m in Sources */,
+				BF678F092057CCE100F561CB /* WXUserModel.m in Sources */,
 				BFB3B83F2056B4310085E6D9 /* UIColor+WXColor.m in Sources */,
 				BFB3B81B2056B0250085E6D9 /* main.m in Sources */,
+				BF678F0C2057CDE200F561CB /* WXMeHeaderTableViewCell.m in Sources */,
+				BF678F0F2057F16E00F561CB /* WXUIFactory.m in Sources */,
 				BFB3B8522056B7C80085E6D9 /* WXContactsListViewController.m in Sources */,
 				BFB3B8422056B4F30085E6D9 /* WXMainFrameViewController.m in Sources */,
 			);

@@ -5,10 +5,9 @@ platform :ios, '8.0'
 target 'renew' do
 
 pod 'Mantle', '2.1.0'
-#pod 'NYTPhotoViewer', '2.0.0'
 pod 'SVProgressHUD', '2.2.5'  #pod 'SVProgressHUD', :inhibit_warnings => true
-
-#pod 'MWPhotoBrowser', :git => 'https://github.com/toureek/MWPhotoBrowser.git', :commit =>'c7201e9e5593f52183591c3925f874b70d250b98'
+pod 'MWPhotoBrowser', :git => 'https://github.com/toureek/MWPhotoBrowser.git', :commit =>'c7201e9e5593f52183591c3925f874b70d250b98'
+#pod 'NYTPhotoViewer', '2.0.0'  #iOS9+ 才能使用anchor相关API
 
 end
 

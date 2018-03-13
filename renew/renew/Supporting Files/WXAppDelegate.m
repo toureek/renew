@@ -9,6 +9,8 @@
 #import "WXAppDelegate.h"
 #import "WXMainFrameViewController.h"
 
+#import <SDWebImageManager.h>
+
 
 CGFloat const kUINavigationLeftItemBackSpace = -64;
 
@@ -23,6 +25,7 @@ CGFloat const kUINavigationLeftItemBackSpace = -64;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self setUpApplicationGUI];
     [self showMainPage];
+    [self cleanImageCache];
     
     return YES;
 }
@@ -67,6 +70,11 @@ CGFloat const kUINavigationLeftItemBackSpace = -64;
     [self.window makeKeyAndVisible];
 }
 
+- (void)cleanImageCache {
+    [[SDWebImageManager sharedManager].imageCache clearMemory];
+    [[SDWebImageManager sharedManager] cancelAll];
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -94,8 +102,7 @@ CGFloat const kUINavigationLeftItemBackSpace = -64;
 }
 
 - (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
-    //    [[SDWebImageManager sharedManager].imageCache clearMemory];
-    //    [[SDWebImageManager sharedManager] cancelAll];
+    [self cleanImageCache];
 }
 
 @end
