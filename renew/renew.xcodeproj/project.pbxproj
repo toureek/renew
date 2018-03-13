@@ -17,6 +17,9 @@
 		BF678F152057F16E00F561CB /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = BF678F142057F16E00F561CB /* NSString+Utils.m */; };
 		BF678F182057F16E00F561CB /* WXContactListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF678F172057F16E00F561CB /* WXContactListHeaderView.m */; };
 		BF678F1B2057F6F300F561CB /* WXTimeLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF678F1A2057F6F300F561CB /* WXTimeLineViewController.m */; };
+		BFA2D42B2057FF7100139B0A /* WXImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA2D42A2057FF7100139B0A /* WXImageModel.m */; };
+		BFA2D42E2057FFB200139B0A /* WXCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA2D42D2057FFB200139B0A /* WXCommentModel.m */; };
+		BFA2D431205800CE00139B0A /* WXTweetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA2D430205800CE00139B0A /* WXTweetModel.m */; };
 		BFB3B8102056B0250085E6D9 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB3B80F2056B0250085E6D9 /* BaseViewController.m */; };
 		BFB3B8152056B0250085E6D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFB3B8142056B0250085E6D9 /* Assets.xcassets */; };
 		BFB3B81B2056B0250085E6D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB3B81A2056B0250085E6D9 /* main.m */; };
@@ -60,6 +63,12 @@
 		BF678F172057F16E00F561CB /* WXContactListHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXContactListHeaderView.m; sourceTree = "<group>"; };
 		BF678F192057F6F300F561CB /* WXTimeLineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXTimeLineViewController.h; sourceTree = "<group>"; };
 		BF678F1A2057F6F300F561CB /* WXTimeLineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXTimeLineViewController.m; sourceTree = "<group>"; };
+		BFA2D4292057FF7100139B0A /* WXImageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXImageModel.h; sourceTree = "<group>"; };
+		BFA2D42A2057FF7100139B0A /* WXImageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXImageModel.m; sourceTree = "<group>"; };
+		BFA2D42C2057FFB200139B0A /* WXCommentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXCommentModel.h; sourceTree = "<group>"; };
+		BFA2D42D2057FFB200139B0A /* WXCommentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXCommentModel.m; sourceTree = "<group>"; };
+		BFA2D42F205800CE00139B0A /* WXTweetModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXTweetModel.h; sourceTree = "<group>"; };
+		BFA2D430205800CE00139B0A /* WXTweetModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXTweetModel.m; sourceTree = "<group>"; };
 		BFB3B8082056B0250085E6D9 /* renew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = renew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB3B80E2056B0250085E6D9 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		BFB3B80F2056B0250085E6D9 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
@@ -343,6 +352,12 @@
 		BFB3B8552056B7EC0085E6D9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BFA2D4292057FF7100139B0A /* WXImageModel.h */,
+				BFA2D42A2057FF7100139B0A /* WXImageModel.m */,
+				BFA2D42C2057FFB200139B0A /* WXCommentModel.h */,
+				BFA2D42D2057FFB200139B0A /* WXCommentModel.m */,
+				BFA2D42F205800CE00139B0A /* WXTweetModel.h */,
+				BFA2D430205800CE00139B0A /* WXTweetModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -543,6 +558,7 @@
 			files = (
 				BF678F022057C81400F561CB /* pinyin.m in Sources */,
 				BF678F182057F16E00F561CB /* WXContactListHeaderView.m in Sources */,
+				BFA2D42E2057FFB200139B0A /* WXCommentModel.m in Sources */,
 				BFB3B8482056B5550085E6D9 /* WXChatListViewController.m in Sources */,
 				BFB3B8102056B0250085E6D9 /* BaseViewController.m in Sources */,
 				BFB3B8582056B7FB0085E6D9 /* WXDiscoverViewController.m in Sources */,
@@ -554,11 +570,13 @@
 				BF678F1B2057F6F300F561CB /* WXTimeLineViewController.m in Sources */,
 				BFB3B83F2056B4310085E6D9 /* UIColor+WXColor.m in Sources */,
 				BFB3B81B2056B0250085E6D9 /* main.m in Sources */,
+				BFA2D431205800CE00139B0A /* WXTweetModel.m in Sources */,
 				BF678F0C2057CDE200F561CB /* WXMeHeaderTableViewCell.m in Sources */,
 				BF678F0F2057F16E00F561CB /* WXUIFactory.m in Sources */,
 				BFB3B8522056B7C80085E6D9 /* WXContactsListViewController.m in Sources */,
 				BFB3B8422056B4F30085E6D9 /* WXMainFrameViewController.m in Sources */,
 				BF678F152057F16E00F561CB /* NSString+Utils.m in Sources */,
+				BFA2D42B2057FF7100139B0A /* WXImageModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
