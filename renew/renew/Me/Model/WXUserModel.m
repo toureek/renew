@@ -38,12 +38,10 @@
     return _nick ? : @"";
 }
 
-
-
 + (NSArray *)meViewControllerDataSourceList
 {
     return @[@[@[@""], @[@"Watch WeChat"], @[@"Wallet"], @[@"Favourites", @"My Posts", @"Cards & Offers", @"Sticker Gallery"], @[@"Settings"]],
-             @[@[@""], @[@"contactapp"], @[@"contactapp"], @[@"contactapp", @"contactapp", @"contactapp", @"contactapp"], @[@"contactapp"]],
+             @[@[@""], @[kPlaceholderImageName], @[kPlaceholderImageName], @[kPlaceholderImageName, kPlaceholderImageName, kPlaceholderImageName, kPlaceholderImageName], @[kPlaceholderImageName]],
              @[@[@""], @[@""], @[@""], @[@"", @"", @"", @""], @[@"Unprotected"]]];
 }
 

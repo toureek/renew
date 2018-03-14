@@ -37,6 +37,9 @@
 		BFD8D7CD2058C8B70033F4F6 /* WXTimeLineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8D7CC2058C8B70033F4F6 /* WXTimeLineTableViewCell.m */; };
 		BFD8D7D02058D4AB0033F4F6 /* WXTimeLineSubCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8D7CF2058D4AB0033F4F6 /* WXTimeLineSubCollectionViewCell.m */; };
 		BFD8D7D32058D6830033F4F6 /* WXTimeLineSubTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8D7D22058D6830033F4F6 /* WXTimeLineSubTableViewCell.m */; };
+		BFD8D7D72058ECEC0033F4F6 /* WXPagingArray.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8D7D62058ECEC0033F4F6 /* WXPagingArray.m */; };
+		BFD8D7DB2058EDFB0033F4F6 /* WXNotificationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8D7DA2058EDFB0033F4F6 /* WXNotificationInfo.m */; };
+		BFD8D7DE2058EF2B0033F4F6 /* WXEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8D7DD2058EF2B0033F4F6 /* WXEngine.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +114,12 @@
 		BFD8D7CF2058D4AB0033F4F6 /* WXTimeLineSubCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXTimeLineSubCollectionViewCell.m; sourceTree = "<group>"; };
 		BFD8D7D12058D6830033F4F6 /* WXTimeLineSubTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXTimeLineSubTableViewCell.h; sourceTree = "<group>"; };
 		BFD8D7D22058D6830033F4F6 /* WXTimeLineSubTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXTimeLineSubTableViewCell.m; sourceTree = "<group>"; };
+		BFD8D7D52058ECEC0033F4F6 /* WXPagingArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXPagingArray.h; sourceTree = "<group>"; };
+		BFD8D7D62058ECEC0033F4F6 /* WXPagingArray.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXPagingArray.m; sourceTree = "<group>"; };
+		BFD8D7D92058EDFB0033F4F6 /* WXNotificationInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXNotificationInfo.h; sourceTree = "<group>"; };
+		BFD8D7DA2058EDFB0033F4F6 /* WXNotificationInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXNotificationInfo.m; sourceTree = "<group>"; };
+		BFD8D7DC2058EF2B0033F4F6 /* WXEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXEngine.h; sourceTree = "<group>"; };
+		BFD8D7DD2058EF2B0033F4F6 /* WXEngine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXEngine.m; sourceTree = "<group>"; };
 		C5E3BAE9E92B6FEBF2A9B67C /* libPods-renew.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-renew.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA521A43346DA3DF3117DEAD /* Pods-renew.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-renew.release.xcconfig"; path = "Pods/Target Support Files/Pods-renew/Pods-renew.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -215,6 +224,8 @@
 		BFB3B8352056B2870085E6D9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				BFD8D7D82058EDD80033F4F6 /* Networks */,
+				BFD8D7D42058ECCC0033F4F6 /* Paging */,
 				BF678F032057CB0900F561CB /* Base */,
 				BF678EFE2057C7F800F561CB /* ThirdPart */,
 				BFB3B83C2056B36F0085E6D9 /* Categories */,
@@ -427,6 +438,26 @@
 			path = TTTAttributeLable;
 			sourceTree = "<group>";
 		};
+		BFD8D7D42058ECCC0033F4F6 /* Paging */ = {
+			isa = PBXGroup;
+			children = (
+				BFD8D7D52058ECEC0033F4F6 /* WXPagingArray.h */,
+				BFD8D7D62058ECEC0033F4F6 /* WXPagingArray.m */,
+			);
+			path = Paging;
+			sourceTree = "<group>";
+		};
+		BFD8D7D82058EDD80033F4F6 /* Networks */ = {
+			isa = PBXGroup;
+			children = (
+				BFD8D7D92058EDFB0033F4F6 /* WXNotificationInfo.h */,
+				BFD8D7DA2058EDFB0033F4F6 /* WXNotificationInfo.m */,
+				BFD8D7DC2058EF2B0033F4F6 /* WXEngine.h */,
+				BFD8D7DD2058EF2B0033F4F6 /* WXEngine.m */,
+			);
+			path = Networks;
+			sourceTree = "<group>";
+		};
 		F88CD17BA298C0A4111D5117 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -598,6 +629,7 @@
 			files = (
 				BF678F022057C81400F561CB /* pinyin.m in Sources */,
 				BF678F182057F16E00F561CB /* WXContactListHeaderView.m in Sources */,
+				BFD8D7DE2058EF2B0033F4F6 /* WXEngine.m in Sources */,
 				BFA2D42E2057FFB200139B0A /* WXCommentModel.m in Sources */,
 				BFB3B8482056B5550085E6D9 /* WXChatListViewController.m in Sources */,
 				BFB3B8102056B0250085E6D9 /* BaseViewController.m in Sources */,
@@ -614,6 +646,8 @@
 				BFB3B83F2056B4310085E6D9 /* UIColor+WXColor.m in Sources */,
 				BFB3B81B2056B0250085E6D9 /* main.m in Sources */,
 				BFD8D7CD2058C8B70033F4F6 /* WXTimeLineTableViewCell.m in Sources */,
+				BFD8D7D72058ECEC0033F4F6 /* WXPagingArray.m in Sources */,
+				BFD8D7DB2058EDFB0033F4F6 /* WXNotificationInfo.m in Sources */,
 				BFD8D7D02058D4AB0033F4F6 /* WXTimeLineSubCollectionViewCell.m in Sources */,
 				BFA2D431205800CE00139B0A /* WXTweetModel.m in Sources */,
 				BF678F0C2057CDE200F561CB /* WXMeHeaderTableViewCell.m in Sources */,
@@ -660,7 +694,7 @@
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
@@ -669,7 +703,7 @@
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = NO;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -715,7 +749,7 @@
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
@@ -724,7 +758,7 @@
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = NO;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;

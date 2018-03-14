@@ -12,6 +12,7 @@
 
 #import "BaseViewController.h"
 #import "UIColor+WXColor.h"
+#import "AFHTTPResponseSerializer+NetworkUtils.h"
 
 
 #endif /* Renew_Prefix_h */
