@@ -20,6 +20,7 @@ PODS:
   - Mantle/extobjc (2.1.0)
   - Masonry (1.1.0)
   - MBProgressHUD (0.9.2)
+  - MJRefresh (3.1.15.3)
   - MWPhotoBrowser (2.1.2):
     - DACircularProgress (= 2.3)
     - MBProgressHUD (= 0.9.2)
@@ -33,6 +34,7 @@ DEPENDENCIES:
   - AFNetworking (= 3.2.0)
   - Mantle (= 2.1.0)
   - Masonry (= 1.1.0)
+  - MJRefresh (= 3.1.15.3)
   - MWPhotoBrowser (from `https://github.com/toureek/MWPhotoBrowser.git`, commit `c7201e9e5593f52183591c3925f874b70d250b98`)
   - SVProgressHUD (= 2.2.5)
 
@@ -52,10 +54,11 @@ SPEC CHECKSUMS:
   Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   MWPhotoBrowser: dc565509c81c09afb94f271b16c2b6a78363d918
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 5b3dbb2f616e442d21e38ab33709bf08cfee13aa
+PODFILE CHECKSUM: a7a0908922bc7ed1bcdd9eb0d8e5c00d101d53eb
 
 COCOAPODS: 1.4.0

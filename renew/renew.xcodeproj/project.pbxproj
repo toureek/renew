@@ -31,6 +31,12 @@
 		BFB3B8522056B7C80085E6D9 /* WXContactsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB3B8512056B7C80085E6D9 /* WXContactsListViewController.m */; };
 		BFB3B8582056B7FB0085E6D9 /* WXDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB3B8572056B7FB0085E6D9 /* WXDiscoverViewController.m */; };
 		BFB3B85E2056B8270085E6D9 /* WXMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB3B85D2056B8270085E6D9 /* WXMeViewController.m */; };
+		BFD8D7C42058C24F0033F4F6 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8D7C32058C24F0033F4F6 /* TTTAttributedLabel.m */; };
+		BFD8D7C72058C2CC0033F4F6 /* AFHTTPResponseSerializer+NetworkUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8D7C62058C2CC0033F4F6 /* AFHTTPResponseSerializer+NetworkUtils.m */; };
+		BFD8D7CA2058C38B0033F4F6 /* WXTimeLineHeaderTableViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8D7C92058C38B0033F4F6 /* WXTimeLineHeaderTableViewHeader.m */; };
+		BFD8D7CD2058C8B70033F4F6 /* WXTimeLineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8D7CC2058C8B70033F4F6 /* WXTimeLineTableViewCell.m */; };
+		BFD8D7D02058D4AB0033F4F6 /* WXTimeLineSubCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8D7CF2058D4AB0033F4F6 /* WXTimeLineSubCollectionViewCell.m */; };
+		BFD8D7D32058D6830033F4F6 /* WXTimeLineSubTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8D7D22058D6830033F4F6 /* WXTimeLineSubTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +99,18 @@
 		BFB3B8572056B7FB0085E6D9 /* WXDiscoverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXDiscoverViewController.m; sourceTree = "<group>"; };
 		BFB3B85C2056B8270085E6D9 /* WXMeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXMeViewController.h; sourceTree = "<group>"; };
 		BFB3B85D2056B8270085E6D9 /* WXMeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXMeViewController.m; sourceTree = "<group>"; };
+		BFD8D7C22058C24F0033F4F6 /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
+		BFD8D7C32058C24F0033F4F6 /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
+		BFD8D7C52058C2CC0033F4F6 /* AFHTTPResponseSerializer+NetworkUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AFHTTPResponseSerializer+NetworkUtils.h"; sourceTree = "<group>"; };
+		BFD8D7C62058C2CC0033F4F6 /* AFHTTPResponseSerializer+NetworkUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPResponseSerializer+NetworkUtils.m"; sourceTree = "<group>"; };
+		BFD8D7C82058C38B0033F4F6 /* WXTimeLineHeaderTableViewHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXTimeLineHeaderTableViewHeader.h; sourceTree = "<group>"; };
+		BFD8D7C92058C38B0033F4F6 /* WXTimeLineHeaderTableViewHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXTimeLineHeaderTableViewHeader.m; sourceTree = "<group>"; };
+		BFD8D7CB2058C8B70033F4F6 /* WXTimeLineTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXTimeLineTableViewCell.h; sourceTree = "<group>"; };
+		BFD8D7CC2058C8B70033F4F6 /* WXTimeLineTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXTimeLineTableViewCell.m; sourceTree = "<group>"; };
+		BFD8D7CE2058D4AB0033F4F6 /* WXTimeLineSubCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXTimeLineSubCollectionViewCell.h; sourceTree = "<group>"; };
+		BFD8D7CF2058D4AB0033F4F6 /* WXTimeLineSubCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXTimeLineSubCollectionViewCell.m; sourceTree = "<group>"; };
+		BFD8D7D12058D6830033F4F6 /* WXTimeLineSubTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXTimeLineSubTableViewCell.h; sourceTree = "<group>"; };
+		BFD8D7D22058D6830033F4F6 /* WXTimeLineSubTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXTimeLineSubTableViewCell.m; sourceTree = "<group>"; };
 		C5E3BAE9E92B6FEBF2A9B67C /* libPods-renew.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-renew.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA521A43346DA3DF3117DEAD /* Pods-renew.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-renew.release.xcconfig"; path = "Pods/Target Support Files/Pods-renew/Pods-renew.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +146,7 @@
 		BF678EFE2057C7F800F561CB /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				BFD8D7C12058C2070033F4F6 /* TTTAttributeLable */,
 				BF678EFF2057C80100F561CB /* Pinyin */,
 			);
 			path = ThirdPart;
@@ -277,6 +296,8 @@
 				BFB3B83E2056B4310085E6D9 /* UIColor+WXColor.m */,
 				BF678F132057F16E00F561CB /* NSString+Utils.h */,
 				BF678F142057F16E00F561CB /* NSString+Utils.m */,
+				BFD8D7C52058C2CC0033F4F6 /* AFHTTPResponseSerializer+NetworkUtils.h */,
+				BFD8D7C62058C2CC0033F4F6 /* AFHTTPResponseSerializer+NetworkUtils.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -334,6 +355,14 @@
 		BFB3B8532056B7DF0085E6D9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BFD8D7C82058C38B0033F4F6 /* WXTimeLineHeaderTableViewHeader.h */,
+				BFD8D7C92058C38B0033F4F6 /* WXTimeLineHeaderTableViewHeader.m */,
+				BFD8D7CB2058C8B70033F4F6 /* WXTimeLineTableViewCell.h */,
+				BFD8D7CC2058C8B70033F4F6 /* WXTimeLineTableViewCell.m */,
+				BFD8D7CE2058D4AB0033F4F6 /* WXTimeLineSubCollectionViewCell.h */,
+				BFD8D7CF2058D4AB0033F4F6 /* WXTimeLineSubCollectionViewCell.m */,
+				BFD8D7D12058D6830033F4F6 /* WXTimeLineSubTableViewCell.h */,
+				BFD8D7D22058D6830033F4F6 /* WXTimeLineSubTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -387,6 +416,15 @@
 				BFB3B85D2056B8270085E6D9 /* WXMeViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		BFD8D7C12058C2070033F4F6 /* TTTAttributeLable */ = {
+			isa = PBXGroup;
+			children = (
+				BFD8D7C22058C24F0033F4F6 /* TTTAttributedLabel.h */,
+				BFD8D7C32058C24F0033F4F6 /* TTTAttributedLabel.m */,
+			);
+			path = TTTAttributeLable;
 			sourceTree = "<group>";
 		};
 		F88CD17BA298C0A4111D5117 /* Frameworks */ = {
@@ -518,11 +556,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-renew/Pods-renew-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/MWPhotoBrowser/MWPhotoBrowser.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MWPhotoBrowser.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
@@ -563,13 +603,18 @@
 				BFB3B8102056B0250085E6D9 /* BaseViewController.m in Sources */,
 				BFB3B8582056B7FB0085E6D9 /* WXDiscoverViewController.m in Sources */,
 				BF678F062057CB2700F561CB /* WXBaseModel.m in Sources */,
+				BFD8D7C72058C2CC0033F4F6 /* AFHTTPResponseSerializer+NetworkUtils.m in Sources */,
 				BFB3B85E2056B8270085E6D9 /* WXMeViewController.m in Sources */,
 				BFB3B8342056B22C0085E6D9 /* WXAppDelegate.m in Sources */,
 				BF678F122057F16E00F561CB /* WXContactModel.m in Sources */,
 				BF678F092057CCE100F561CB /* WXUserModel.m in Sources */,
 				BF678F1B2057F6F300F561CB /* WXTimeLineViewController.m in Sources */,
+				BFD8D7CA2058C38B0033F4F6 /* WXTimeLineHeaderTableViewHeader.m in Sources */,
+				BFD8D7D32058D6830033F4F6 /* WXTimeLineSubTableViewCell.m in Sources */,
 				BFB3B83F2056B4310085E6D9 /* UIColor+WXColor.m in Sources */,
 				BFB3B81B2056B0250085E6D9 /* main.m in Sources */,
+				BFD8D7CD2058C8B70033F4F6 /* WXTimeLineTableViewCell.m in Sources */,
+				BFD8D7D02058D4AB0033F4F6 /* WXTimeLineSubCollectionViewCell.m in Sources */,
 				BFA2D431205800CE00139B0A /* WXTweetModel.m in Sources */,
 				BF678F0C2057CDE200F561CB /* WXMeHeaderTableViewCell.m in Sources */,
 				BF678F0F2057F16E00F561CB /* WXUIFactory.m in Sources */,
@@ -577,6 +622,7 @@
 				BFB3B8422056B4F30085E6D9 /* WXMainFrameViewController.m in Sources */,
 				BF678F152057F16E00F561CB /* NSString+Utils.m in Sources */,
 				BFA2D42B2057FF7100139B0A /* WXImageModel.m in Sources */,
+				BFD8D7C42058C24F0033F4F6 /* TTTAttributedLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
