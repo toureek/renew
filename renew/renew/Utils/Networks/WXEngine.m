@@ -20,10 +20,12 @@ NSString *const kAPIRequestForFetchingUserTweet = @"user/jsmith/tweets";
 
 - (void)fetchAllFormatedTweetsAndPostHandlingNotificationInfo {
     NSString *url = [NSString stringWithFormat:@"%@%@", kBaseAPI, kAPIRequestForFetchingUserTweet];
+    NSLog(@"%@", url);
     AFHTTPRequestOperationManager *client = [AFHTTPRequestOperationManager manager];
     [client GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         WXNotificationInfo *info = [[WXNotificationInfo alloc] init];
         if (responseObject && [responseObject isKindOfClass:[NSArray class]]) {
+            NSLog(@"%@", responseObject);
             NSArray *itemList = [MTLJSONAdapter modelsOfClass:WXTweetModel.class
                                                 fromJSONArray:responseObject
                                                         error:nil];
@@ -55,9 +57,11 @@ NSString *const kAPIRequestForFetchingUserTweet = @"user/jsmith/tweets";
 
 - (void)fetchUserInfoAndPostHandlingNotificationInfo {
     NSString *url = [NSString stringWithFormat:@"%@%@", kBaseAPI, kAPIRequestForUserInfo];
+    NSLog(@"%@", url);
     AFHTTPRequestOperationManager *client = [AFHTTPRequestOperationManager manager];
     [client GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         WXNotificationInfo *info = [[WXNotificationInfo alloc] init];
+        NSLog(@"%@", responseObject);
         if (responseObject && [responseObject isKindOfClass:[NSDictionary class]]) {
             WXUserModel *userModel = [MTLJSONAdapter modelOfClass:[WXUserModel class]
                                                fromJSONDictionary:responseObject

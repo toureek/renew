@@ -50,6 +50,8 @@ static CGFloat const kWithoutContentTextWidth = 10+45+10+10.0f;
     return self;
 }
 
+
+//TODO: Calculate height in Model && Remove MagicNumber
 + (CGFloat)height:(WXTweetModel *)tweet
 {
     CGFloat height = 0;
@@ -74,6 +76,7 @@ static CGFloat const kWithoutContentTextWidth = 10+45+10+10.0f;
     return ceil(height);
 }
 
+//TODO: Calculate height in Model && Remove MagicNumber
 + (CGFloat)heightForTweets:(WXTweetModel *)tweet
 {
     CGFloat height = 0;
@@ -104,6 +107,7 @@ static CGFloat const kWithoutContentTextWidth = 10+45+10+10.0f;
             height += ceil([WXTimeLineSubTableViewCell height:[item commentContent]]);
             height += 2;
         }
+        height += 10;
     } else {
         height += CGFLOAT_MIN;
         height += 1.5;

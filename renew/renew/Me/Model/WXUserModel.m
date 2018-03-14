@@ -14,6 +14,8 @@
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
     return @{@"profileImage" : @"profile-image",
+             @"nick"         : @"nick",
+             @"username"     : @"username",
              @"avatar"       : @"avatar"};
 }
 

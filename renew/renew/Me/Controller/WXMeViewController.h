@@ -9,6 +9,8 @@
 #import "BaseViewController.h"
 
 
+extern NSString *const kDidFetchUserInfoNotificationReceived;
+
 @interface WXMeViewController : BaseViewController
 
 @end

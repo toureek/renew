@@ -14,7 +14,8 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
-    return @{@"sender" : @"sender"};
+    return @{@"sender" : @"sender",
+             @"content": @"content"};
 }
 
 + (NSValueTransformer *)senderJSONTransformer

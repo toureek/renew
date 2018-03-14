@@ -32,12 +32,12 @@ static CGFloat const kWXTimeLineHeaderViewThinLeftPadding = 10.0f;
 - (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithReuseIdentifier:reuseIdentifier];
     if (self) {
-        [self setUpViewsAndLayout];
+        [self setUpViews];
     }
     return self;
 }
 
-- (void)setUpViewsAndLayout {
+- (void)setUpViews {
     self.contentView.backgroundColor = [UIColor whiteColor];
     
     _profileImageView = [[UIImageView alloc] init];
@@ -54,7 +54,9 @@ static CGFloat const kWXTimeLineHeaderViewThinLeftPadding = 10.0f;
     
     [self.contentView bringSubviewToFront:_avatorImageView];
     [self.contentView bringSubviewToFront:_nickNameLabel];
-    
+}
+
+- (void)addSubViewsLayout {
     [_profileImageView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.top.left.and.right.equalTo(self.contentView);
         make.height.equalTo(@(kWXTimeLineHeaderTableViewHeaderHeight-(kWXTimeLineHeaderViewAvatorSize/2)));
@@ -71,6 +73,12 @@ static CGFloat const kWXTimeLineHeaderViewThinLeftPadding = 10.0f;
         make.right.equalTo(_avatorImageView.mas_left).offset(-kWXTimeLineHeaderViewThinLeftPadding*2);
         make.height.equalTo(@15);
     }];
+}
+
+- (void)updateConstraints {
+    [self addSubViewsLayout];
+    
+    [super updateConstraints];
 }
 
 - (void)setUserItem:(WXUserModel *)userItem {
