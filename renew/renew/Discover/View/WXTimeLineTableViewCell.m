@@ -26,6 +26,8 @@ static CGFloat const kUserNameFontHeight = 17.0f;
 static CGFloat const kLeftRightPadding = 10.0f;
 static CGFloat const kGoldenScalePoint = 0.618;
 static CGFloat const kWithoutContentTextWidth = 10+45+10+10.0f;
+static CGFloat const kSubViewCenterYOffsetPadding = 3.0f;
+static CGFloat const kWXTimeLineViewCellTopPadding = 15.0f;
 
 @interface WXTimeLineTableViewCell ()
 
@@ -50,12 +52,10 @@ static CGFloat const kWithoutContentTextWidth = 10+45+10+10.0f;
     return self;
 }
 
-
-//TODO: Calculate height in Model && Remove MagicNumber
 + (CGFloat)height:(WXTweetModel *)tweet
 {
     CGFloat height = 0;
-    height += 15;
+    height += kWXTimeLineViewCellTopPadding;
     if ([tweet existContentText]) {
         CGSize size = [WXTimeLineTableViewCell getStringRect:tweet.content ? : @""
                                                    WithWidth:SCREEN_WIDTH-kWithoutContentTextWidth
@@ -65,7 +65,7 @@ static CGFloat const kWithoutContentTextWidth = 10+45+10+10.0f;
             height += kImageAvatorSize;
         } else {
             height += kImageAvatorSize/2.0;
-            height += 3;
+            height += kSubViewCenterYOffsetPadding;
             height += ceil(calculateContentHeight);
         }
         height += [self heightForTweets:tweet];
@@ -76,32 +76,48 @@ static CGFloat const kWithoutContentTextWidth = 10+45+10+10.0f;
     return ceil(height);
 }
 
-//TODO: Calculate height in Model && Remove MagicNumber
 + (CGFloat)heightForTweets:(WXTweetModel *)tweet
 {
     CGFloat height = 0;
-    CGFloat collectionViewWidth = ceil(floor(SCREEN_WIDTH-10-45-10-15-6)/3)*3+6;
-    if ([tweet existPictures] && (tweet.imagesList.count == 1)) {
-        height += kLeftRightPadding;
-        height += collectionViewWidth*kGoldenScalePoint;
-    } else if ([tweet existPictures] && (tweet.imagesList.count < 4)) {
-        height += kLeftRightPadding;
-        height += collectionViewWidth/3.0+2;
-    } else if ([tweet existPictures] && (tweet.imagesList.count < 7)) {
-        height += kLeftRightPadding;
-        height += collectionViewWidth/3.0*2+4;
-    } else if ([tweet existPictures] && (tweet.imagesList.count < 10)) {
-        height += kLeftRightPadding;
-        height += collectionViewWidth/3.0*3+6;
-    } else {
-        height += kImageAvatorSize/2.0;
-        height += 3;
-    }
+    height += [self calculateForTweetsImageHeight:tweet];
     
     height += kLeftRightPadding;
-    height += 11;
+    height += 11;  // FontSize is 10 with the borderHeight, LabelHeight will be 11 in calculating.
     height += 2;
     
+    height += [self calculateForCommentsHeight:tweet];
+    height += [self calculateTweetStyleHeight:tweet];
+    
+    return ceil(height);
+}
+
++ (CGFloat)calculateForTweetsImageHeight:(WXTweetModel *)tweet
+{
+    CGFloat height = 0;
+    CGFloat collectionViewWidth = ceil(floor(SCREEN_WIDTH-10-45-10-15-6)/3)*3+6;
+    if ([tweet existPictures] && (tweet.imagesList.count == kOneLineMinImageCountsInTweetsPictures)) {
+        height += kLeftRightPadding;
+        height += collectionViewWidth*kGoldenScalePoint;
+    } else if ([tweet existPictures] && (tweet.imagesList.count < kTwoLineMinImageCountsInTweetsPictures)) {
+        height += kLeftRightPadding;
+        height += collectionViewWidth/3.0+2;  // iamge with one-line height
+    } else if ([tweet existPictures] && (tweet.imagesList.count < kThreeLineMinImageCountsInTweetsPictures)) {
+        height += kLeftRightPadding;
+        height += collectionViewWidth/3.0*2+4;  // iamge with two-line height
+    } else if ([tweet existPictures] && (tweet.imagesList.count < kFourLineMinImageCountsInTweetsPictures)) {
+        height += kLeftRightPadding;
+        height += collectionViewWidth/3.0*3+6;  // iamge with three-line height
+    } else {
+        height += kImageAvatorSize/2.0;  // no-image-height
+        height += kSubViewCenterYOffsetPadding;
+    }
+    
+    return ceil(height);
+}
+
++ (CGFloat)calculateForCommentsHeight:(WXTweetModel *)tweet
+{
+    CGFloat height = 0;
     if (tweet.commentsList.count > 0) {
         for (WXCommentModel *item in tweet.commentsList) {
             height += ceil([WXTimeLineSubTableViewCell height:[item commentContent]]);
@@ -112,20 +128,23 @@ static CGFloat const kWithoutContentTextWidth = 10+45+10+10.0f;
         height += CGFLOAT_MIN;
         height += 1.5;
     }
-    
+    return ceil(height);
+}
+
++ (CGFloat)calculateTweetStyleHeight:(WXTweetModel *)tweet
+{
+    CGFloat height = 0;
     if (tweet.tweetType == WXTweetTypePictureOnly) {
-        height += 20;
+        height += 20;  // CollectionViewImage TopPadding
     } else if (tweet.tweetType == WXTweetTypeContentOnly) {
-        height -= 15;
+        height -= 15;  // No CollectionViewImage Height
     } else if (tweet.tweetType == WXTweetTypeContentPictureType) {
-        height += 5;
+        height += 5;  // Within Padding on WXTweetTypeContentPictureType
     } else if (tweet.tweetType == WXTweetTypeContentCommentsType || (tweet.tweetType == WXTweetTypePictureCommentsType)) {
-        height += 3;
+        height += kSubViewCenterYOffsetPadding;
     } else if (tweet.tweetType == WXTweetTypeContentPictureCommentsType) {
         height += 10;
     }
-    
-    height += 1;
     
     return ceil(height);
 }
@@ -248,7 +267,7 @@ static CGFloat const kWithoutContentTextWidth = 10+45+10+10.0f;
 - (void)addAvatorImageViewLayout {
     [_avatorImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.contentView).offset(kLeftRightPadding);
-        make.top.equalTo(self.contentView).offset(15);
+        make.top.equalTo(self.contentView).offset(kWXTimeLineViewCellTopPadding);
         make.size.mas_equalTo(CGSizeMake(kImageAvatorSize, kImageAvatorSize));
     }];
 }
@@ -274,7 +293,7 @@ static CGFloat const kWithoutContentTextWidth = 10+45+10+10.0f;
                 make.bottom.equalTo(_avatorImageView.mas_bottom);
                 make.height.equalTo(@(calculateContentHeight));
             } else {
-                make.top.equalTo(_avatorImageView.mas_centerY).offset(3);
+                make.top.equalTo(_avatorImageView.mas_centerY).offset(kSubViewCenterYOffsetPadding);
                 make.height.equalTo(@(calculateContentHeight));
             }
             make.left.equalTo(_userNameLabel);
@@ -294,17 +313,17 @@ static CGFloat const kWithoutContentTextWidth = 10+45+10+10.0f;
             if ([_tweetModel existContentText]) {  // Exist Content
                 make.top.equalTo(_contentLabel.mas_bottom).offset(kLeftRightPadding);
             } else {
-                make.top.equalTo(_avatorImageView.mas_centerY).offset(3);
+                make.top.equalTo(_avatorImageView.mas_centerY).offset(kSubViewCenterYOffsetPadding);
             }
             
             CGFloat collectionViewWidth = ceil(floor(SCREEN_WIDTH-10-45-10-15-6)/3)*3+6;
-            if (_tweetModel.imagesList.count == 1) {
+            if (_tweetModel.imagesList.count == kOneLineMinImageCountsInTweetsPictures) {
                 make.size.mas_offset(CGSizeMake(collectionViewWidth, collectionViewWidth*kGoldenScalePoint));
-            } else if (_tweetModel.imagesList.count < 4) {
+            } else if (_tweetModel.imagesList.count < kTwoLineMinImageCountsInTweetsPictures) {
                 make.size.mas_offset(CGSizeMake(ceil(collectionViewWidth), collectionViewWidth/3.0+2));
-            } else if (_tweetModel.imagesList.count < 7) {
+            } else if (_tweetModel.imagesList.count < kThreeLineMinImageCountsInTweetsPictures) {
                 make.size.mas_offset(CGSizeMake(ceil(collectionViewWidth), collectionViewWidth/3.0*2+4));
-            } else if (_tweetModel.imagesList.count < 10) {
+            } else if (_tweetModel.imagesList.count < kFourLineMinImageCountsInTweetsPictures) {
                 make.size.mas_offset(CGSizeMake(ceil(collectionViewWidth), collectionViewWidth/3.0*3+6));
             }
         } else {

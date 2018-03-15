@@ -12,6 +12,11 @@
 #import "WXCommentModel.h"
 
 
+NSUInteger const kOneLineMinImageCountsInTweetsPictures = 1;
+NSUInteger const kTwoLineMinImageCountsInTweetsPictures = 4;
+NSUInteger const kThreeLineMinImageCountsInTweetsPictures = 7;
+NSUInteger const kFourLineMinImageCountsInTweetsPictures = 10;
+
 @implementation WXTweetModel
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey

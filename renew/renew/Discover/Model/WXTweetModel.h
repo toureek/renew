@@ -9,6 +9,11 @@
 #import "WXBaseModel.h"
 
 
+extern NSUInteger const kOneLineMinImageCountsInTweetsPictures;
+extern NSUInteger const kTwoLineMinImageCountsInTweetsPictures;
+extern NSUInteger const kThreeLineMinImageCountsInTweetsPictures;
+extern NSUInteger const kFourLineMinImageCountsInTweetsPictures;
+
 typedef NS_ENUM(NSUInteger, WXTweetType) {
     WXTweetTypeUnknow = 0,                       // 未知类型
     WXTweetTypeError = 1,
