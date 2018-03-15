@@ -19,7 +19,7 @@ extern NSString *const WXKFetchMyTweetsList;
 
 @interface WXNotificationInfo : NSObject
 
-@property (nonatomic, copy) NSString *code;  // if [code isEqualToString:@"0"] means Request Successfully
+@property (nonatomic, copy) NSString *code;  // REST: if [code isEqualToString:@"0"] means Request Successfully
 @property (nonatomic, copy) NSString *errorMsg;
 
 @property (nonatomic, strong) NSMutableArray *tweetsList;

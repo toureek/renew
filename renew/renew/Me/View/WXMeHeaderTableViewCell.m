@@ -11,11 +11,13 @@
 #import "WXUIFactory.h"
 #import <UIImageView+WebCache.h>
 
+
 NSString *const kWXMeHeaderTableViewCellTag = @"kWXMeHeaderTableViewCellTag";
 CGFloat const kWXMeHeaderTableViewCellHeight = 90.0f;
 CGFloat const kWXCommonLeftRightPaddingSpace = 15.0f;
 static CGFloat const kWXThinLeftRightPadddingSpace = 10.0f;
 static CGFloat const kWXAvatorImageSize = 70.0f;
+static CGFloat const kWXUserNameLabelHeight = 17.0f;
 
 @interface WXMeHeaderTableViewCell ()
 
@@ -130,7 +132,7 @@ static CGFloat const kWXAvatorImageSize = 70.0f;
     if (@available(iOS 9.0, *)) {
         [_nameLabel.bottomAnchor constraintEqualToAnchor:_avatorImageView.centerYAnchor constant:(-kWXThinLeftRightPadddingSpace/2.0)].active = YES;
         [_nameLabel.leftAnchor constraintEqualToAnchor:_avatorImageView.rightAnchor constant:kWXThinLeftRightPadddingSpace].active = YES;
-        [_nameLabel.heightAnchor constraintEqualToConstant:17].active = YES;
+        [_nameLabel.heightAnchor constraintEqualToConstant:kWXUserNameLabelHeight].active = YES;
     } else {
         NSLayoutConstraint *leftConstrains = [NSLayoutConstraint constraintWithItem:_nameLabel
                                                                           attribute:NSLayoutAttributeLeft
@@ -154,7 +156,7 @@ static CGFloat const kWXAvatorImageSize = 70.0f;
                                                                                toItem:nil
                                                                             attribute:NSLayoutAttributeNotAnAttribute
                                                                            multiplier:1
-                                                                             constant:17];
+                                                                             constant:kWXUserNameLabelHeight];
         
         [self.contentView addConstraints:@[leftConstrains, bottomConstrains, heightConstrains]];
     }
@@ -188,7 +190,7 @@ static CGFloat const kWXAvatorImageSize = 70.0f;
                                                                                toItem:nil
                                                                             attribute:NSLayoutAttributeNotAnAttribute
                                                                            multiplier:1
-                                                                             constant:17];
+                                                                             constant:kWXUserNameLabelHeight];
         [self.contentView addConstraints:@[topConstrains, leftConstrains, heightConstrains]];
     }
 }

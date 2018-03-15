@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#import <MWPhoto.h>
+#import <MWPhotoBrowser.h>
+
 
 extern NSString *const kWXTimeLineSubCollectionViewTag;
 
@@ -15,6 +18,7 @@ extern NSString *const kWXTimeLineSubCollectionViewTag;
 
 @property (nonatomic, copy) NSString *imgURL;
 
++ (MWPhotoBrowser *)setUpPhotoBroswerObject;
 - (void)refresh;
 
 @end

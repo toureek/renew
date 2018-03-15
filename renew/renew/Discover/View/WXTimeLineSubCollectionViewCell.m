@@ -45,4 +45,16 @@ NSString *const kWXTimeLineSubCollectionViewTag = @"kWXTimeLineSubCollectionView
                            options:SDWebImageRetryFailed];
 }
 
++ (MWPhotoBrowser *)setUpPhotoBroswerObject {
+    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] init];
+    browser.alwaysShowControls = browser.zoomPhotosToFill = browser.enableSwipeToDismiss = YES;
+    browser.startOnGrid = browser.displayActionButton = browser.displayNavArrows = browser.displaySelectionButtons = NO;
+    [browser setCurrentPhotoIndex:0];
+    [browser showNextPhotoAnimated:NO];
+    [browser showPreviousPhotoAnimated:NO];
+    
+    return browser;
+}
+
+
 @end

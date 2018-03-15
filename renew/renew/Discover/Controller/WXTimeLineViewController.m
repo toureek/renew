@@ -11,8 +11,9 @@
 #import "WXUserModel.h"
 #import "WXImageModel.h"
 #import "WXTweetModel.h"
-#import "WXTimeLineHeaderTableViewHeader.h"
 #import "WXTimeLineTableViewCell.h"
+#import "WXTimeLineHeaderTableViewHeader.h"
+#import "WXTimeLineSubCollectionViewCell.h"
 #import "WXPagingArray.h"
 #import "WXMeViewController.h"
 
@@ -35,6 +36,14 @@
 
 @implementation WXTimeLineViewController {
     WXEngine *_networkingEngine;
+}
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.hidesBottomBarWhenPushed = YES;
+    }
+    return self;
 }
 
 - (void)viewDidLoad {
@@ -80,9 +89,9 @@ forHeaderFooterViewReuseIdentifier:kWXTimeLineHeaderTableViewHeaderTag];
 
 - (void)addPullToRefreshAndInfinityScrollingToTableView {
     _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self
-                                                            refreshingAction:@selector(loadNewTweetsList)];
+                                                            refreshingAction:@selector(loadNewTweetsListWithPullToRefresh)];
     MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self
-                                                                             refreshingAction:@selector(loadMoreTweetsList)];
+                                                                             refreshingAction:@selector(loadMoreTweetsListWithInfinityScrolling)];
     footer.stateLabel.textColor = [UIColor WX_SubmainContentTextColor];
     [footer setTitle:@"" forState:MJRefreshStateIdle];
     [footer setTitle:@"" forState:MJRefreshStateNoMoreData];
@@ -111,22 +120,19 @@ forHeaderFooterViewReuseIdentifier:kWXTimeLineHeaderTableViewHeaderTag];
 
 #pragma mark - Pull-To-Refresh && Infinity-Scrolling
 
+- (void)loadNewTweetsListWithPullToRefresh {
+    [_tableView.mj_header beginRefreshing];
+    [self loadNewTweetsList];
+}
+
 - (void)loadNewTweetsList {
-    [self triggerToLoadData:YES];
+    [self setUpFirstPagePagingDataSource];
+    [self handleWithAnimationAfterPullToRefreshOrInfinityScrollingFinished];
 }
 
-- (void)loadMoreTweetsList {
-    [self triggerToLoadData:NO];
-}
-
-- (void)triggerToLoadData:(BOOL)isPullToRefresh {
-    if (isPullToRefresh) {
-        [_tableView.mj_header beginRefreshing];
-        [self setUpFirstPagePagingDataSource];
-    } else {
-        [_tableView.mj_footer beginRefreshing];
-        [self setUpNonFirstPagePagingDataSource];
-    }
+- (void)loadMoreTweetsListWithInfinityScrolling {
+    [_tableView.mj_footer beginRefreshing];
+    [self setUpNonFirstPagePagingDataSource];
     [self handleWithAnimationAfterPullToRefreshOrInfinityScrollingFinished];
 }
 
@@ -153,11 +159,11 @@ forHeaderFooterViewReuseIdentifier:kWXTimeLineHeaderTableViewHeaderTag];
     [_tableView.mj_header endRefreshing];
     [_tableView.mj_footer endRefreshing];
     [_tableView reloadData];
-    
-    if (![_dataList hasMore]) {  // Dealing with Infinity-Scrolling
+    BOOL existMoreData = [_dataList hasMore];
+    if (!existMoreData) {
         [_tableView.mj_footer endRefreshingWithNoMoreData];
-        _tableView.mj_footer.hidden = YES;
     }
+    _tableView.mj_footer.hidden = !existMoreData;
 }
 
 #pragma mark - UITableViewDataSource
@@ -212,7 +218,7 @@ forHeaderFooterViewReuseIdentifier:kWXTimeLineHeaderTableViewHeaderTag];
             MWPhoto *photoItem = [MWPhoto photoWithURL:[NSURL URLWithString:img.url]];
             [_photos addObject:photoItem];
         }
-        MWPhotoBrowser *browser = [WXTimeLineViewController setUpPhotoBroswerObject];
+        MWPhotoBrowser *browser = [WXTimeLineSubCollectionViewCell setUpPhotoBroswerObject];
         browser.displayActionButton = browser.enableDeleteMode = NO;
         browser.delegate = self;
         [self.navigationController pushViewController:browser animated:YES];
@@ -223,22 +229,6 @@ forHeaderFooterViewReuseIdentifier:kWXTimeLineHeaderTableViewHeaderTag];
             [browser setCurrentPhotoIndex:indexB];
         });
     }
-}
-
-+ (MWPhotoBrowser *)setUpPhotoBroswerObject {
-    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] init];
-    browser.enableSwipeToDismiss = YES;
-    browser.displayActionButton = NO;
-    browser.displayNavArrows = NO;
-    browser.displaySelectionButtons = NO;
-    browser.zoomPhotosToFill = YES;
-    browser.alwaysShowControls = YES;
-    browser.startOnGrid = NO;
-    [browser setCurrentPhotoIndex:0];
-    [browser showNextPhotoAnimated:NO];
-    [browser showPreviousPhotoAnimated:NO];
-    
-    return browser;
 }
 
 #pragma mark - MWPhotoBrowserDelegate
@@ -272,8 +262,7 @@ forHeaderFooterViewReuseIdentifier:kWXTimeLineHeaderTableViewHeaderTag];
         WXNotificationInfo *info = [notification.userInfo objectForKey:WXKFetchMyTweetsList];
         if ([info requestExecuteSuccessfully]) {
             self.tweetList = [info.tweetsList copy];
-            [self setUpFirstPagePagingDataSource];
-            [self handleWithAnimationAfterPullToRefreshOrInfinityScrollingFinished];
+            [self loadNewTweetsList];
         } else {
             [SVProgressHUD showErrorWithStatus:info.errorMsg];
         }

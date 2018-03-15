@@ -113,26 +113,27 @@ static CGFloat const kWXDiscoverBadgeViewSize = 8.0f;
             _avatorImageView = [[UIImageView alloc] init];
             _avatorImageView.image = [UIImage imageNamed:kPlaceholderImageName];
             [cell.contentView addSubview:_avatorImageView];
+            
+            [_avatorImageView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.centerY.equalTo(cell.contentView);
+                make.size.mas_equalTo(CGSizeMake(kWXDiscoverAvatorSize, kWXDiscoverAvatorSize));
+                make.right.equalTo(cell.contentView).offset(-kWXDiscoverThinPaddingSpace/2.0);
+            }];
         }
+        
         if (!_badgeView) {
             _badgeView = [[UIView alloc] init];
             _badgeView.backgroundColor = [UIColor redColor];
             _badgeView.layer.masksToBounds = YES;
             _badgeView.layer.cornerRadius = kWXDiscoverBadgeViewSize/2;
             [cell.contentView addSubview:_badgeView];
+            
+            [_badgeView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.size.mas_equalTo(CGSizeMake(kWXDiscoverBadgeViewSize, kWXDiscoverBadgeViewSize));
+                make.centerY.equalTo(_avatorImageView.mas_top);
+                make.centerX.equalTo(_avatorImageView.mas_right);
+            }];
         }
-        
-        [_avatorImageView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(cell.contentView);
-            make.size.mas_equalTo(CGSizeMake(kWXDiscoverAvatorSize, kWXDiscoverAvatorSize));
-            make.right.equalTo(cell.contentView).offset(-kWXDiscoverThinPaddingSpace/2.0);
-        }];
-        [_badgeView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(kWXDiscoverBadgeViewSize, kWXDiscoverBadgeViewSize));
-            make.centerY.equalTo(_avatorImageView.mas_top);
-            make.centerX.equalTo(_avatorImageView.mas_right);
-        }];
-        
         [cell.contentView bringSubviewToFront:_badgeView];
     } else {
         // do nothing...
