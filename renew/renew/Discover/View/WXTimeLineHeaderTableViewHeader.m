@@ -92,6 +92,7 @@ static CGFloat const kWXTimeLineHeaderViewThinLeftPadding = 10.0f;
                             placeholderImage:placeholderImg];
         
         _nickNameLabel.text = [_userItem userItemTimelineDisplayName];
+        [self.contentView setNeedsUpdateConstraints];
     }
 }
 

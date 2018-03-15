@@ -588,7 +588,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-renew/Pods-renew-resources.sh",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
-				"$PODS_CONFIGURATION_BUILD_DIR/MWPhotoBrowser/MWPhotoBrowser.bundle",
+				$PODS_CONFIGURATION_BUILD_DIR/MWPhotoBrowser/MWPhotoBrowser.bundle,
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -793,7 +793,7 @@
 				GCC_PREFIX_HEADER = "renew/Supporting Files/Renew_Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/renew/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = keep.it.in.mind.renew;
+				PRODUCT_BUNDLE_IDENTIFIER = keep.ing.minder.renew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -811,7 +811,7 @@
 				GCC_PREFIX_HEADER = "renew/Supporting Files/Renew_Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/renew/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = keep.it.in.mind.renew;
+				PRODUCT_BUNDLE_IDENTIFIER = keep.ing.minder.renew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -26,7 +26,7 @@
 
 @interface WXTimeLineViewController () <UITableViewDataSource, UITableViewDelegate, WXTimeLineTableViewCellDelegate, MWPhotoBrowserDelegate>
 
-@property (nonatomic, copy) NSArray *tweetList;
+@property (nonatomic, strong) NSMutableArray *tweetList;
 @property (nonatomic, strong) WXUserModel *userModel;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) WXPagingArray *dataList;
@@ -122,7 +122,8 @@ forHeaderFooterViewReuseIdentifier:kWXTimeLineHeaderTableViewHeaderTag];
 
 - (void)loadNewTweetsListWithPullToRefresh {
     [_tableView.mj_header beginRefreshing];
-    [self loadNewTweetsList];
+    [_networkingEngine fetchAllFormatedTweetsAndPostHandlingNotificationInfo];
+//    [self loadNewTweetsList];
 }
 
 - (void)loadNewTweetsList {
@@ -138,11 +139,13 @@ forHeaderFooterViewReuseIdentifier:kWXTimeLineHeaderTableViewHeaderTag];
 
 - (void)setUpFirstPagePagingDataSource {
     _dataList = [[WXPagingArray alloc] init];
-    NSArray *firstFiveObjList = @[_tweetList[0], _tweetList[1], _tweetList[2], _tweetList[3], _tweetList[4]];
-    [_dataList addObjectsFromArray:firstFiveObjList];
-    _dataList.page = 1;
-    _dataList.pageSize = 5;
-    _dataList.totalSize = self.tweetList.count;
+    if (_tweetList && _tweetList.count > 0) {
+        NSArray *firstFiveObjList = @[_tweetList[0], _tweetList[1], _tweetList[2], _tweetList[3], _tweetList[4]];
+        [_dataList addObjectsFromArray:firstFiveObjList];
+        _dataList.page = 1;
+        _dataList.pageSize = 5;
+        _dataList.totalSize = self.tweetList.count;
+    }
 }
 
 - (void)setUpNonFirstPagePagingDataSource {
@@ -158,12 +161,12 @@ forHeaderFooterViewReuseIdentifier:kWXTimeLineHeaderTableViewHeaderTag];
 - (void)handleWithAnimationAfterPullToRefreshOrInfinityScrollingFinished {
     [_tableView.mj_header endRefreshing];
     [_tableView.mj_footer endRefreshing];
-    [_tableView reloadData];
     BOOL existMoreData = [_dataList hasMore];
     if (!existMoreData) {
         [_tableView.mj_footer endRefreshingWithNoMoreData];
     }
     _tableView.mj_footer.hidden = !existMoreData;
+    [_tableView reloadData];
 }
 
 #pragma mark - UITableViewDataSource
@@ -261,9 +264,11 @@ forHeaderFooterViewReuseIdentifier:kWXTimeLineHeaderTableViewHeaderTag];
     } else if ([notification.name isEqualToString:WXNFetchMyTweetsList] && notification.userInfo) {
         WXNotificationInfo *info = [notification.userInfo objectForKey:WXKFetchMyTweetsList];
         if ([info requestExecuteSuccessfully]) {
-            self.tweetList = [info.tweetsList copy];
+            self.tweetList = info.tweetsList;
             [self loadNewTweetsList];
         } else {
+            [_tableView.mj_header endRefreshing];
+            [_tableView reloadData];
             [SVProgressHUD showErrorWithStatus:info.errorMsg];
         }
     }
