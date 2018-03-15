@@ -18,6 +18,7 @@ extern NSString *const kWXTimeLineTableViewCellTag;
 - (void)triggerToResponseAfterContentTapped:(BOOL)isExtend atIndex:(NSInteger)index;
 - (void)triggerToResponseAfterCommentButtonClickedAtIndex:(NSInteger)index;
 - (void)triggerToResponseAfterPictureTappedAtIndexItem:(NSInteger)indexA atIndexImg:(NSInteger)indexB;
+- (void)triggerToResponseAfterContentURLLinkTapped:(NSURL *)url;
 
 @end
 

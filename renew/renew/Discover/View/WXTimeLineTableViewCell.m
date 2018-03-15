@@ -463,6 +463,15 @@ referenceSizeForFooterInSection:(NSInteger)section {
     return CGFLOAT_MIN;
 }
 
+#pragma mark - TTTAttributedLabelDelegate
+
+- (void)attributedLabel:(TTTAttributedLabel *)label didSelectLinkWithURL:(NSURL *)url {
+    if (url && _delegate && [_delegate respondsToSelector:@selector(triggerToResponseAfterContentURLLinkTapped:)]) {
+        NSLog(@"%@", [url absoluteString]);
+        [_delegate triggerToResponseAfterContentURLLinkTapped:url];
+    }
+}
+
 #pragma mark - Button SEL
 
 - (void)didCommentButtonClicked:(id)sender {

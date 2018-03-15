@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0C6E7A5A4151F97E44F5FEA3 /* libPods-renew.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E3BAE9E92B6FEBF2A9B67C /* libPods-renew.a */; };
+		BF43E383205ADC0700D9E368 /* WXWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF43E382205ADC0700D9E368 /* WXWebViewViewController.m */; };
 		BF678F022057C81400F561CB /* pinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = BF678F012057C81400F561CB /* pinyin.m */; };
 		BF678F062057CB2700F561CB /* WXBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF678F052057CB2700F561CB /* WXBaseModel.m */; };
 		BF678F092057CCE100F561CB /* WXUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF678F082057CCE100F561CB /* WXUserModel.m */; };
@@ -54,6 +55,8 @@
 
 /* Begin PBXFileReference section */
 		620D7448F4709DB0366C4F5E /* Pods-renew.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-renew.debug.xcconfig"; path = "Pods/Target Support Files/Pods-renew/Pods-renew.debug.xcconfig"; sourceTree = "<group>"; };
+		BF43E381205ADC0700D9E368 /* WXWebViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXWebViewViewController.h; sourceTree = "<group>"; };
+		BF43E382205ADC0700D9E368 /* WXWebViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXWebViewViewController.m; sourceTree = "<group>"; };
 		BF678F002057C81400F561CB /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pinyin.h; sourceTree = "<group>"; };
 		BF678F012057C81400F561CB /* pinyin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pinyin.m; sourceTree = "<group>"; };
 		BF678F042057CB2700F561CB /* WXBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXBaseModel.h; sourceTree = "<group>"; };
@@ -296,6 +299,8 @@
 				BFB3B8412056B4F30085E6D9 /* WXMainFrameViewController.m */,
 				BF678F0D2057F16E00F561CB /* WXUIFactory.h */,
 				BF678F0E2057F16E00F561CB /* WXUIFactory.m */,
+				BF43E381205ADC0700D9E368 /* WXWebViewViewController.h */,
+				BF43E382205ADC0700D9E368 /* WXWebViewViewController.m */,
 			);
 			path = UIKitor;
 			sourceTree = "<group>";
@@ -633,6 +638,7 @@
 				BFB3B8102056B0250085E6D9 /* BaseViewController.m in Sources */,
 				BFB3B8582056B7FB0085E6D9 /* WXDiscoverViewController.m in Sources */,
 				BF678F062057CB2700F561CB /* WXBaseModel.m in Sources */,
+				BF43E383205ADC0700D9E368 /* WXWebViewViewController.m in Sources */,
 				BFD8D7C72058C2CC0033F4F6 /* AFHTTPResponseSerializer+NetworkUtils.m in Sources */,
 				BFB3B85E2056B8270085E6D9 /* WXMeViewController.m in Sources */,
 				BFB3B8342056B22C0085E6D9 /* WXAppDelegate.m in Sources */,

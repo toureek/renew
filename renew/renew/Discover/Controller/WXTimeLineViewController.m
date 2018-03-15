@@ -16,6 +16,7 @@
 #import "WXTimeLineSubCollectionViewCell.h"
 #import "WXPagingArray.h"
 #import "WXMeViewController.h"
+#import "WXWebViewViewController.h"
 
 #import <MWPhoto.h>
 #import <MWPhotoBrowser.h>
@@ -231,6 +232,14 @@ forHeaderFooterViewReuseIdentifier:kWXTimeLineHeaderTableViewHeaderTag];
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
             [browser setCurrentPhotoIndex:indexB];
         });
+    }
+}
+
+- (void)triggerToResponseAfterContentURLLinkTapped:(NSURL *)url {
+    if (self.dataList.count > 0) {
+        WXWebViewViewController *webView = [[WXWebViewViewController alloc] init];
+        webView.url = [url absoluteString];
+        [self.navigationController pushViewController:webView animated:YES];
     }
 }
 
