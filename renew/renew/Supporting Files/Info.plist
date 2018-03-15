@@ -4,6 +4,15 @@
 <dict>
 	<key>NSAppTransportSecurity</key>
 	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>NSExceptionRequiresForwardSecrecy</key>
+			<false/>
+			<key>NSIncludeSubdomains</key>
+			<true/>
+			<key>NSExceptionAllowInsecureHTTPLoads</key>
+			<true/>
+		</dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
