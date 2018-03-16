@@ -43,9 +43,17 @@ static NSString *const kWXContactsListTableViewTag = @"kWXContactsListTableViewT
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"Contacts";
+    [self setUpContactsListViewControllerStyle];
     [self setUpViews];
     [self authorizedToLoadContacts];
+}
+
+- (void)setUpContactsListViewControllerStyle {
+    self.navigationItem.title = @"Contacts";
+    self.automaticallyAdjustsScrollViewInsets = YES;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.extendedLayoutIncludesOpaqueBars = YES;
+    self.definesPresentationContext = YES;
 }
 
 - (void)setUpViews {
@@ -90,18 +98,21 @@ static NSString *const kWXContactsListTableViewTag = @"kWXContactsListTableViewT
     self.navigationController.navigationBar.backgroundColor = [UIColor WX_AppMainColor];
     
     _searchController = [[UISearchController alloc] initWithSearchResultsController:_searchResultController];
+    _searchController.searchBar.frame = CGRectMake(0, 0, self.view.bounds.size.width, kWXSearchBarHeight);
+    _searchController.extendedLayoutIncludesOpaqueBars = YES;
     _searchController.searchResultsUpdater = self;
     _searchController.searchBar.delegate = self;
     _searchController.searchBar.translucent = YES;
     _searchController.searchBar.layer.borderWidth = CGFLOAT_MIN;
     _searchController.searchBar.tintColor = [UIColor blueColor];
-    _searchController.searchBar.backgroundColor = [UIColor whiteColor];
+    _searchController.searchBar.backgroundColor = [UIColor clearColor];
     _searchController.searchBar.searchBarStyle = UISearchBarStyleProminent;
     _searchController.searchBar.barStyle = UIBarStyleDefault;
     _searchController.searchBar.barTintColor = [UIColor WX_SeperatorLineColor];
+    _searchController.searchBar.layer.borderWidth = 1;
     _searchController.searchBar.layer.borderColor = [[UIColor WX_SeperatorLineColor] CGColor];
-    _searchController.searchBar.frame = CGRectMake(0, 0, self.view.bounds.size.width, kWXSearchBarHeight);
-    
+    [_searchController.searchBar sizeToFit];
+
     _searchResultController.tableView.dataSource = _contactListTableView.dataSource = self;
     _searchResultController.tableView.delegate = _contactListTableView.delegate = self;
     
@@ -280,7 +291,7 @@ static NSString *const kWXContactsListTableViewTag = @"kWXContactsListTableViewT
 #pragma mark - UISearchResultsUpdating
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
-    NSLog(@"Entering:%@ ",searchController.searchBar.text);
+    NSLog(@"Searching:%@ ",searchController.searchBar.text);
 }
 
 @end

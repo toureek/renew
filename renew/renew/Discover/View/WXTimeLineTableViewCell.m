@@ -230,6 +230,11 @@ static CGFloat const kWXTimeLineViewCellTopPadding = 15.0f;
     if (@available(iOS 9.0, *)) {
         _commentTableView.cellLayoutMarginsFollowReadableWidth = NO;
     }
+    if (@available(iOS 11, *)) {
+        _commentTableView.estimatedRowHeight = 0;
+        _commentTableView.estimatedSectionHeaderHeight = 0;
+        _commentTableView.estimatedSectionFooterHeight = 0;
+    }
     [self.contentView addSubview:_commentTableView];
 }
 

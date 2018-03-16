@@ -6,6 +6,7 @@
 //  Copyright © 2018 toureek. All rights reserved.
 //
 
+
 #import "WXTimeLineViewController.h"
 #import "WXEngine.h"
 #import "WXUserModel.h"
@@ -23,7 +24,6 @@
 #import <MJRefresh.h>
 #import <Masonry.h>
 #import <SVProgressHUD.h>
-
 
 @interface WXTimeLineViewController () <UITableViewDataSource, UITableViewDelegate, WXTimeLineTableViewCellDelegate, MWPhotoBrowserDelegate>
 
@@ -50,11 +50,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.title = @"Timeline";
-    _photos = [NSMutableArray arrayWithCapacity:4];
+    [self setUpTimeLineViewControllerInitiations];
     [self registerNotificationObservers];
     [self setUpTableViewAndLayout];
     [self invokeNetworkingRequest];
+}
+
+- (void)setUpTimeLineViewControllerInitiations {
+    self.title = @"Timeline";
+    self.automaticallyAdjustsScrollViewInsets = YES;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.extendedLayoutIncludesOpaqueBars = YES;
+    _photos = [NSMutableArray arrayWithCapacity:4];
+    if (@available(iOS 11.0, *)) {
+        self.navigationController.navigationItem.largeTitleDisplayMode = UINavigationItemLargeTitleDisplayModeNever;
+        self.navigationController.navigationBar.prefersLargeTitles = NO;
+        
+    }
 }
 
 - (void)registerNotificationObservers {

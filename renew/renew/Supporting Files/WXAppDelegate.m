@@ -13,7 +13,7 @@
 #import <JPFPSStatus.h>
 
 
-CGFloat const kUINavigationLeftItemBackSpace = -64;
+CGFloat const kUINavigationLeftItemBackSpace = 64;
 
 @interface WXAppDelegate ()
 
@@ -68,8 +68,12 @@ CGFloat const kUINavigationLeftItemBackSpace = -64;
     
     [[UINavigationBar appearance] setBarTintColor:[UIColor WX_AppMainColor]];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    [UIBarButtonItem.appearance setBackButtonTitlePositionAdjustment:UIOffsetMake(0, kUINavigationLeftItemBackSpace)
-                                                       forBarMetrics:UIBarMetricsDefault];
+    if (@available(iOS 11, *)) {
+        // do nothing... UIModernBarButton changes in iOS11
+    } else {
+        [UIBarButtonItem.appearance setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -kUINavigationLeftItemBackSpace)
+                                                           forBarMetrics:UIBarMetricsDefault];
+    }
 }
 
 - (void)showMainPage {
