@@ -240,7 +240,7 @@ static CGFloat const kWXUserNameLabelHeight = 17.0f;
 
 - (void)setUserModel:(WXUserModel *)userModel {
     _userModel = userModel;
-    if (_userModel) {
+    if ([userModel existUserInfo]) {
         _nameLabel.text = [_userModel userItemName];
         _identifierLabel.text = [_userModel userItemDisplayedNickName];
         [_avatorImageView sd_setImageWithURL:[NSURL URLWithString:[_userModel userItemAvatarImagePath]]

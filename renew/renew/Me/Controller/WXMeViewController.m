@@ -32,6 +32,7 @@ static NSString *const kWXMeTableViewTag = @"kWXMeTableViewTag";
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.hidesBottomBarWhenPushed = NO;
+        [self registerNetworkingRequestObserver];
     }
     return self;
 }
@@ -41,7 +42,6 @@ static NSString *const kWXMeTableViewTag = @"kWXMeTableViewTag";
 
     self.navigationItem.title = @"Me";
     [self initTableViewAndSetupLayout];
-    [self registerNetworkingRequestObserver];
 }
 
 - (void)initTableViewAndSetupLayout {

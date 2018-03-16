@@ -49,27 +49,27 @@ NSUInteger const kFourLineMinImageCountsInTweetsPictures = 10;
 - (WXTweetType)tweetType {
     if (_error && [_error length] > 0) {
         return WXTweetTypeError;
-    } else if (_sender &&
+    } else if ([_sender existUserInfo] &&
              (_content && [_content length] > 0) &&
              (_imagesList && (_imagesList.count > 0)) &&
              (_commentsList && (_commentsList.count > 0))) {
         return WXTweetTypeContentPictureCommentsType;
-    } else if (_sender &&
+    } else if ([_sender existUserInfo] &&
              (_content && [_content length] > 0) &&
              (_imagesList && (_imagesList.count > 0))) {
         return WXTweetTypeContentPictureType;
-    } else if (_sender &&
+    } else if ([_sender existUserInfo] &&
              (_content && [_content length] > 0) &&
              (_commentsList && (_commentsList.count > 0))) {
         return WXTweetTypeContentCommentsType;
-    } else if (_sender &&
+    } else if ([_sender existUserInfo] &&
              (_imagesList && (_imagesList.count > 0)) &&
              (_commentsList && (_commentsList.count > 0))) {
         return WXTweetTypePictureCommentsType;
-    } else if (_sender &&
+    } else if ([_sender existUserInfo] &&
              (_imagesList && (_imagesList.count > 0))) {
         return WXTweetTypePictureOnly;
-    } else if (_sender &&
+    } else if ([_sender existUserInfo] &&
              (_content && [_content length] > 0)) {
         return WXTweetTypeContentOnly;
     } else {

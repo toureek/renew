@@ -19,6 +19,10 @@
              @"avatar"       : @"avatar"};
 }
 
+- (BOOL)existUserInfo {
+    return _username && [_username length] > 0;
+}
+
 - (NSString *)userItemName {
     return _username ? : @"";
 }

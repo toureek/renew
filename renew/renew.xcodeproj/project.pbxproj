@@ -11,6 +11,7 @@
 		59A27EEAED6B49E576278571 /* Pods_renewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C62CB232855194168CD97512 /* Pods_renewTests.framework */; };
 		BF03E076205BD1BF003A0254 /* SwiftSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF03E075205BD1BF003A0254 /* SwiftSpec.swift */; };
 		BF03E078205BD339003A0254 /* WXTweetModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = BF03E077205BD339003A0254 /* WXTweetModelSpec.m */; };
+		BF03E07A205BFF05003A0254 /* WXContactModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = BF03E079205BFF05003A0254 /* WXContactModelSpec.m */; };
 		BF43E383205ADC0700D9E368 /* WXWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF43E382205ADC0700D9E368 /* WXWebViewViewController.m */; };
 		BF678F022057C81400F561CB /* pinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = BF678F012057C81400F561CB /* pinyin.m */; };
 		BF678F062057CB2700F561CB /* WXBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF678F052057CB2700F561CB /* WXBaseModel.m */; };
@@ -60,6 +61,7 @@
 		BF03E074205BD1BE003A0254 /* renewTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "renewTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		BF03E075205BD1BF003A0254 /* SwiftSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSpec.swift; sourceTree = "<group>"; };
 		BF03E077205BD339003A0254 /* WXTweetModelSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXTweetModelSpec.m; sourceTree = "<group>"; };
+		BF03E079205BFF05003A0254 /* WXContactModelSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXContactModelSpec.m; sourceTree = "<group>"; };
 		BF43E381205ADC0700D9E368 /* WXWebViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXWebViewViewController.h; sourceTree = "<group>"; };
 		BF43E382205ADC0700D9E368 /* WXWebViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXWebViewViewController.m; sourceTree = "<group>"; };
 		BF678F002057C81400F561CB /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pinyin.h; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 		BF03E073205BD1A6003A0254 /* Specs */ = {
 			isa = PBXGroup;
 			children = (
+				BF03E079205BFF05003A0254 /* WXContactModelSpec.m */,
 				BF03E077205BD339003A0254 /* WXTweetModelSpec.m */,
 				BF03E075205BD1BF003A0254 /* SwiftSpec.swift */,
 				BF03E074205BD1BE003A0254 /* renewTests-Bridging-Header.h */,
@@ -751,6 +754,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF03E076205BD1BF003A0254 /* SwiftSpec.swift in Sources */,
+				BF03E07A205BFF05003A0254 /* WXContactModelSpec.m in Sources */,
 				BF03E078205BD339003A0254 /* WXTweetModelSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

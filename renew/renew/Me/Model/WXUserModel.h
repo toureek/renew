@@ -16,6 +16,8 @@
 @property (nonatomic, copy) NSString *nick;
 @property (nonatomic, copy) NSString *username;
 
+- (BOOL)existUserInfo;
+
 - (NSString *)userItemName;
 - (NSString *)userItemAvatarImagePath;
 - (NSString *)userItemProfileImagePath;

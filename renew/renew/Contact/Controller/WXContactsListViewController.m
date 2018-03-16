@@ -13,15 +13,17 @@
 #import "pinyin.h"
 
 
+static CGFloat const kWXSearchBarHeight = 44.0f;
+static CGFloat const kContentCommonPaddingSpace = 10.0f;
 static CGFloat const kWXContactsListItemRowHeight = 50.0f;
 static NSString *const kWXContactsListTableViewTag = @"kWXContactsListTableViewTag";
 
-@interface WXContactsListViewController () <UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, UISearchBarDelegate>
+@interface WXContactsListViewController () <UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, UISearchBarDelegate, UISearchResultsUpdating>
 
+@property (nonatomic, strong) UITableViewController *searchResultController;
+@property (nonatomic, strong) UISearchController *searchController;
 @property (nonatomic, strong) UITableView *contactListTableView;
 @property (nonatomic, strong) NSMutableDictionary *dataDictionary;  // All-Contacts DataSource
-@property (nonatomic, strong) UISearchBar *searchBar;
-@property (nonatomic, strong) UISearchDisplayController *searchDisplayController;
 
 @end
 
@@ -48,7 +50,8 @@ static NSString *const kWXContactsListTableViewTag = @"kWXContactsListTableViewT
 
 - (void)setUpViews {
     [self setUpInitiationDataAndTableView];
-    [self setUpInitiationNavigtaionBarStyleAndSearchingStyle];
+    [self setUpSearchResultController];
+    [self setUpSearchingStyleAndDelegations];
 }
 
 - (void)setUpInitiationDataAndTableView {
@@ -69,35 +72,49 @@ static NSString *const kWXContactsListTableViewTag = @"kWXContactsListTableViewT
     [self.view addSubview:_contactListTableView];
 }
 
-- (void)setUpInitiationNavigtaionBarStyleAndSearchingStyle {
+- (void)setUpSearchResultController {
+    _searchResultController = [[UITableViewController alloc] initWithStyle:UITableViewStylePlain];
+    _searchResultController.tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    _searchResultController.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    _searchResultController.tableView.sectionIndexColor = [UIColor WX_ColorWithHexString:@"#555555"];
+    _searchResultController.tableView.backgroundColor = [UIColor whiteColor];
+    _searchResultController.automaticallyAdjustsScrollViewInsets = YES;
+    _searchResultController.edgesForExtendedLayout = UIRectEdgeNone;
+    if (@available(iOS 9.0, *)) {
+        _searchResultController.tableView.cellLayoutMarginsFollowReadableWidth = NO;
+    }
+}
+
+- (void)setUpSearchingStyleAndDelegations {
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     self.navigationController.navigationBar.backgroundColor = [UIColor WX_AppMainColor];
-
-    _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 64)];
-    _searchBar.delegate = self;
-    _searchBar.backgroundColor = [UIColor whiteColor];
-    _searchBar.searchBarStyle = UISearchBarStyleProminent;
-    _searchBar.tintColor = [UIColor greenColor];
-    _searchBar.barTintColor = [UIColor WX_SeperatorLineColor];
-    _searchBar.layer.borderWidth = CGFLOAT_MIN;
-    _searchBar.layer.borderColor = [[UIColor WX_SeperatorLineColor] CGColor];
     
-    // 从iOS7开始兼容，此处还是保留iOS7接口功能;  iOS8之后 API多了UISearchController
-    _searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:_searchBar contentsController:self];
-    _searchDisplayController.delegate = self;
-    _searchDisplayController.searchResultsDataSource = _contactListTableView.dataSource = self;
-    _searchDisplayController.searchResultsDelegate = _contactListTableView.delegate = self;
-    _contactListTableView.tableHeaderView = _searchBar;
-    _contactListTableView.tableHeaderView.backgroundColor = [UIColor whiteColor];
-    _searchDisplayController.searchResultsTableView.sectionIndexColor = [UIColor WX_ColorWithHexString:@"#555555"];
-    _searchDisplayController.searchResultsTableView.backgroundColor = [UIColor whiteColor];
+    _searchController = [[UISearchController alloc] initWithSearchResultsController:_searchResultController];
+    _searchController.searchResultsUpdater = self;
+    _searchController.searchBar.delegate = self;
+    _searchController.searchBar.translucent = YES;
+    _searchController.searchBar.layer.borderWidth = CGFLOAT_MIN;
+    _searchController.searchBar.tintColor = [UIColor blueColor];
+    _searchController.searchBar.backgroundColor = [UIColor whiteColor];
+    _searchController.searchBar.searchBarStyle = UISearchBarStyleProminent;
+    _searchController.searchBar.barStyle = UIBarStyleDefault;
+    _searchController.searchBar.barTintColor = [UIColor WX_SeperatorLineColor];
+    _searchController.searchBar.layer.borderColor = [[UIColor WX_SeperatorLineColor] CGColor];
+    _searchController.searchBar.frame = CGRectMake(0, 0, self.view.bounds.size.width, kWXSearchBarHeight);
+    
+    _searchResultController.tableView.dataSource = _contactListTableView.dataSource = self;
+    _searchResultController.tableView.delegate = _contactListTableView.delegate = self;
+    
+    _contactListTableView.tableHeaderView = _searchController.searchBar;
+    _contactListTableView.tableHeaderView.backgroundColor = [UIColor clearColor];
+    _contactListTableView.tableFooterView = [UIView new];
 }
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
     if ([_contactListTableView respondsToSelector:@selector(setSeparatorInset:)]) {
-        [_contactListTableView setSeparatorInset:UIEdgeInsetsMake(0, 10, 0, 0)];
+        [_contactListTableView setSeparatorInset:UIEdgeInsetsMake(0, kContentCommonPaddingSpace, 0, 0)];
     }
     if ([_contactListTableView respondsToSelector:@selector(setLayoutMargins:)]) {
         [_contactListTableView setLayoutMargins:UIEdgeInsetsZero];
@@ -149,11 +166,11 @@ static NSString *const kWXContactsListTableViewTag = @"kWXContactsListTableViewT
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return tableView == _searchDisplayController.searchResultsTableView ? 1 : _titleIndexList.count;
+    return tableView == _searchResultController.tableView ? 1 : _titleIndexList.count;
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-    return _searchDisplayController.searchResultsTableView == tableView ? [NSArray new] : _titleIndexList;
+    return _searchResultController.tableView == tableView ? [NSArray new] : _titleIndexList;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
@@ -161,7 +178,7 @@ static NSString *const kWXContactsListTableViewTag = @"kWXContactsListTableViewT
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (tableView == _searchDisplayController.searchResultsTableView) {
+    if (tableView == _searchResultController.tableView) {
         return _searchResultList.count;
     }
     
@@ -178,7 +195,7 @@ static NSString *const kWXContactsListTableViewTag = @"kWXContactsListTableViewT
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    if (tableView == _searchDisplayController.searchResultsTableView) {
+    if (tableView == _searchResultController.tableView) {
         WXContactModel *contact = [_searchResultList objectAtIndex:indexPath.row];
         cell.imageView.image = [UIImage imageNamed:kPlaceholderImageName];
         cell.textLabel.text = contact.name ? : @"";
@@ -205,7 +222,7 @@ static NSString *const kWXContactsListTableViewTag = @"kWXContactsListTableViewT
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    if (tableView == _searchDisplayController.searchResultsTableView) {
+    if (tableView == _searchResultController.tableView) {
         return [UIView new];
     }
     
@@ -217,7 +234,7 @@ static NSString *const kWXContactsListTableViewTag = @"kWXContactsListTableViewT
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return tableView == _searchDisplayController.searchResultsTableView ? CGFLOAT_MIN : kWXContactListHeaderViewHeight;
+    return tableView == _searchResultController.tableView ? CGFLOAT_MIN : kWXContactListHeaderViewHeight;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
@@ -239,7 +256,7 @@ static NSString *const kWXContactsListTableViewTag = @"kWXContactsListTableViewT
     _searchResultList = [NSArray new];
     NSArray *allContactArray = [_dataDictionary allValues];
     _searchResultList = [WXContactModel filterSearchingResult:allContactArray matchKeywords:searchText];
-    [_searchDisplayController.searchResultsTableView reloadData];
+    [_searchResultController.tableView reloadData];
 }
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
@@ -257,7 +274,13 @@ static NSString *const kWXContactsListTableViewTag = @"kWXContactsListTableViewT
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
-    return _searchBar.isFirstResponder ? UIStatusBarStyleDefault : UIStatusBarStyleLightContent;
+    return _searchController.searchBar.isFirstResponder ? UIStatusBarStyleDefault : UIStatusBarStyleLightContent;
+}
+
+#pragma mark - UISearchResultsUpdating
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    NSLog(@"Entering:%@ ",searchController.searchBar.text);
 }
 
 @end
