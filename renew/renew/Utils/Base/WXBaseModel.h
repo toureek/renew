@@ -6,7 +6,7 @@
 //  Copyright © 2018 toureek. All rights reserved.
 //
 
-#import <Mantle.h>
+#import <Mantle/Mantle.h>
 #import "MTLModel.h"
 
 

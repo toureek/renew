@@ -13,5 +13,13 @@ pod 'AFNetworking', '2.5.3'
 pod 'SVProgressHUD', '2.2.5'
 pod 'MWPhotoBrowser', :git => 'https://github.com/toureek/MWPhotoBrowser.git', :commit =>'c7201e9e5593f52183591c3925f874b70d250b98'
 #pod 'NYTPhotoViewer', '2.0.0'  #iOS9+ 才能使用anchor相关API
+
 end
 
+target 'renewTests' do
+    pod 'Mantle', '2.1.0'
+    pod 'Quick', '1.2.0'
+    pod 'Nimble', '7.0.3'
+    use_frameworks!
+    
+end

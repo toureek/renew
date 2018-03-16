@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0C6E7A5A4151F97E44F5FEA3 /* libPods-renew.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E3BAE9E92B6FEBF2A9B67C /* libPods-renew.a */; };
+		59A27EEAED6B49E576278571 /* Pods_renewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C62CB232855194168CD97512 /* Pods_renewTests.framework */; };
+		BF03E076205BD1BF003A0254 /* SwiftSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF03E075205BD1BF003A0254 /* SwiftSpec.swift */; };
+		BF03E078205BD339003A0254 /* WXTweetModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = BF03E077205BD339003A0254 /* WXTweetModelSpec.m */; };
 		BF43E383205ADC0700D9E368 /* WXWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF43E382205ADC0700D9E368 /* WXWebViewViewController.m */; };
 		BF678F022057C81400F561CB /* pinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = BF678F012057C81400F561CB /* pinyin.m */; };
 		BF678F062057CB2700F561CB /* WXBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF678F052057CB2700F561CB /* WXBaseModel.m */; };
@@ -24,7 +27,6 @@
 		BFB3B8102056B0250085E6D9 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB3B80F2056B0250085E6D9 /* BaseViewController.m */; };
 		BFB3B8152056B0250085E6D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFB3B8142056B0250085E6D9 /* Assets.xcassets */; };
 		BFB3B81B2056B0250085E6D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB3B81A2056B0250085E6D9 /* main.m */; };
-		BFB3B8252056B0250085E6D9 /* renewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB3B8242056B0250085E6D9 /* renewTests.m */; };
 		BFB3B8342056B22C0085E6D9 /* WXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB3B8332056B22C0085E6D9 /* WXAppDelegate.m */; };
 		BFB3B83F2056B4310085E6D9 /* UIColor+WXColor.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB3B83E2056B4310085E6D9 /* UIColor+WXColor.m */; };
 		BFB3B8422056B4F30085E6D9 /* WXMainFrameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB3B8412056B4F30085E6D9 /* WXMainFrameViewController.m */; };
@@ -55,6 +57,9 @@
 
 /* Begin PBXFileReference section */
 		620D7448F4709DB0366C4F5E /* Pods-renew.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-renew.debug.xcconfig"; path = "Pods/Target Support Files/Pods-renew/Pods-renew.debug.xcconfig"; sourceTree = "<group>"; };
+		BF03E074205BD1BE003A0254 /* renewTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "renewTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		BF03E075205BD1BF003A0254 /* SwiftSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSpec.swift; sourceTree = "<group>"; };
+		BF03E077205BD339003A0254 /* WXTweetModelSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXTweetModelSpec.m; sourceTree = "<group>"; };
 		BF43E381205ADC0700D9E368 /* WXWebViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXWebViewViewController.h; sourceTree = "<group>"; };
 		BF43E382205ADC0700D9E368 /* WXWebViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXWebViewViewController.m; sourceTree = "<group>"; };
 		BF678F002057C81400F561CB /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pinyin.h; sourceTree = "<group>"; };
@@ -88,7 +93,6 @@
 		BFB3B8192056B0250085E6D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFB3B81A2056B0250085E6D9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BFB3B8202056B0250085E6D9 /* renewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = renewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BFB3B8242056B0250085E6D9 /* renewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = renewTests.m; sourceTree = "<group>"; };
 		BFB3B8262056B0250085E6D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFB3B8322056B22B0085E6D9 /* WXAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXAppDelegate.h; sourceTree = "<group>"; };
 		BFB3B8332056B22C0085E6D9 /* WXAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXAppDelegate.m; sourceTree = "<group>"; };
@@ -124,7 +128,10 @@
 		BFD8D7DC2058EF2B0033F4F6 /* WXEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXEngine.h; sourceTree = "<group>"; };
 		BFD8D7DD2058EF2B0033F4F6 /* WXEngine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXEngine.m; sourceTree = "<group>"; };
 		C5E3BAE9E92B6FEBF2A9B67C /* libPods-renew.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-renew.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C62CB232855194168CD97512 /* Pods_renewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_renewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1A9602E6ECFA882FF04F535 /* Pods-renewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-renewTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-renewTests/Pods-renewTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DA521A43346DA3DF3117DEAD /* Pods-renew.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-renew.release.xcconfig"; path = "Pods/Target Support Files/Pods-renew/Pods-renew.release.xcconfig"; sourceTree = "<group>"; };
+		E1156619D72748975389FB4C /* Pods-renewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-renewTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-renewTests/Pods-renewTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59A27EEAED6B49E576278571 /* Pods_renewTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,8 +159,20 @@
 			children = (
 				620D7448F4709DB0366C4F5E /* Pods-renew.debug.xcconfig */,
 				DA521A43346DA3DF3117DEAD /* Pods-renew.release.xcconfig */,
+				D1A9602E6ECFA882FF04F535 /* Pods-renewTests.debug.xcconfig */,
+				E1156619D72748975389FB4C /* Pods-renewTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		BF03E073205BD1A6003A0254 /* Specs */ = {
+			isa = PBXGroup;
+			children = (
+				BF03E077205BD339003A0254 /* WXTweetModelSpec.m */,
+				BF03E075205BD1BF003A0254 /* SwiftSpec.swift */,
+				BF03E074205BD1BE003A0254 /* renewTests-Bridging-Header.h */,
+			);
+			path = Specs;
 			sourceTree = "<group>";
 		};
 		BF678EFE2057C7F800F561CB /* ThirdPart */ = {
@@ -218,7 +238,7 @@
 		BFB3B8232056B0250085E6D9 /* renewTests */ = {
 			isa = PBXGroup;
 			children = (
-				BFB3B8242056B0250085E6D9 /* renewTests.m */,
+				BF03E073205BD1A6003A0254 /* Specs */,
 				BFB3B8262056B0250085E6D9 /* Info.plist */,
 			);
 			path = renewTests;
@@ -467,6 +487,7 @@
 			isa = PBXGroup;
 			children = (
 				C5E3BAE9E92B6FEBF2A9B67C /* libPods-renew.a */,
+				C62CB232855194168CD97512 /* Pods_renewTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -498,9 +519,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BFB3B82C2056B0250085E6D9 /* Build configuration list for PBXNativeTarget "renewTests" */;
 			buildPhases = (
+				59C436713A7B20BC9EA76A6F /* [CP] Check Pods Manifest.lock */,
 				BFB3B81C2056B0250085E6D9 /* Sources */,
 				BFB3B81D2056B0250085E6D9 /* Frameworks */,
 				BFB3B81E2056B0250085E6D9 /* Resources */,
+				763A07CD04F200AF112F7DB4 /* [CP] Embed Pods Frameworks */,
+				DFC24072C52BC0D28CC80E02 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -527,6 +551,7 @@
 					};
 					BFB3B81F2056B0250085E6D9 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = BFB3B8072056B0250085E6D9;
 					};
@@ -570,6 +595,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		59C436713A7B20BC9EA76A6F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-renewTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		62F6A9DB89A7170ECA79F2F2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -583,6 +626,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-renew/Pods-renew-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		763A07CD04F200AF112F7DB4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-renewTests/Pods-renewTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Mantle-framework/Mantle.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mantle.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-renewTests/Pods-renewTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9A09DCC2C3E96E7E088BB0D9 /* [CP] Copy Pods Resources */ = {
@@ -623,6 +688,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFC24072C52BC0D28CC80E02 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-renewTests/Pods-renewTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -670,7 +750,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFB3B8252056B0250085E6D9 /* renewTests.m in Sources */,
+				BF03E076205BD1BF003A0254 /* SwiftSpec.swift in Sources */,
+				BF03E078205BD339003A0254 /* WXTweetModelSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -717,6 +798,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -737,6 +819,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -772,6 +855,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -785,6 +869,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -831,14 +916,20 @@
 		};
 		BFB3B82D2056B0250085E6D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1A9602E6ECFA882FF04F535 /* Pods-renewTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 497KMMCX78;
 				INFOPLIST_FILE = renewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = keep.it.in.mind.renewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "renewTests/Specs/renewTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/renew.app/renew";
 			};
@@ -846,14 +937,19 @@
 		};
 		BFB3B82E2056B0250085E6D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1156619D72748975389FB4C /* Pods-renewTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 497KMMCX78;
 				INFOPLIST_FILE = renewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = keep.it.in.mind.renewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "renewTests/Specs/renewTests-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/renew.app/renew";
 			};

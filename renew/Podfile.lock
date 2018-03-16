@@ -32,6 +32,8 @@ PODS:
     - DACircularProgress (= 2.3)
     - MBProgressHUD (= 0.9.2)
     - SDWebImage (!= 3.7.2, ~> 3.7)
+  - Nimble (7.0.3)
+  - Quick (1.2.0)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -44,6 +46,8 @@ DEPENDENCIES:
   - Masonry (= 1.1.0)
   - MJRefresh (= 3.1.15.3)
   - MWPhotoBrowser (from `https://github.com/toureek/MWPhotoBrowser.git`, commit `c7201e9e5593f52183591c3925f874b70d250b98`)
+  - Nimble (= 7.0.3)
+  - Quick (= 1.2.0)
   - SVProgressHUD (= 2.2.5)
 
 EXTERNAL SOURCES:
@@ -65,9 +69,11 @@ SPEC CHECKSUMS:
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   MWPhotoBrowser: dc565509c81c09afb94f271b16c2b6a78363d918
+  Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
+  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: bbc45a1b1c187e9168eceba344570ccc8c1d5689
+PODFILE CHECKSUM: bb6fea68c9c99292303ffa4d0d7c9ce5c05e0e46
 
 COCOAPODS: 1.4.0
