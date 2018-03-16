@@ -124,7 +124,6 @@ forHeaderFooterViewReuseIdentifier:kWXTimeLineHeaderTableViewHeaderTag];
 - (void)loadNewTweetsListWithPullToRefresh {
     [_tableView.mj_header beginRefreshing];
     [_networkingEngine fetchAllFormatedTweetsAndPostHandlingNotificationInfo];
-//    [self loadNewTweetsList];
 }
 
 - (void)loadNewTweetsList {

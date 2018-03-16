@@ -325,6 +325,8 @@ static CGFloat const kWXTimeLineViewCellTopPadding = 15.0f;
                 make.size.mas_offset(CGSizeMake(ceil(collectionViewWidth), collectionViewWidth/3.0*2+4));
             } else if (_tweetModel.imagesList.count < kFourLineMinImageCountsInTweetsPictures) {
                 make.size.mas_offset(CGSizeMake(ceil(collectionViewWidth), collectionViewWidth/3.0*3+6));
+            } else {
+                // do nothing...
             }
         } else {
             _pictureCollectionView.hidden = YES;
@@ -338,6 +340,8 @@ static CGFloat const kWXTimeLineViewCellTopPadding = 15.0f;
             make.top.equalTo(_pictureCollectionView.mas_bottom).offset(kLeftRightPadding);
         } else if ([_tweetModel existContentText]) {
             make.top.equalTo(_contentLabel.mas_bottom).offset(kLeftRightPadding);
+        } else {
+            // do nothing...
         }
         make.right.equalTo(self.contentView.mas_centerX);
         make.left.equalTo(_userNameLabel);

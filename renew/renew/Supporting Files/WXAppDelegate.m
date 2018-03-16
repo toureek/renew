@@ -10,6 +10,7 @@
 #import "WXMainFrameViewController.h"
 
 #import <SDWebImageManager.h>
+#import <JPFPSStatus.h>
 
 
 CGFloat const kUINavigationLeftItemBackSpace = -64;
@@ -26,6 +27,8 @@ CGFloat const kUINavigationLeftItemBackSpace = -64;
     [self setUpApplicationGUI];
     [self showMainPage];
     [self cleanImageCache];
+    
+    [self setUpFPSTool];
     
     return YES;
 }
@@ -50,6 +53,12 @@ CGFloat const kUINavigationLeftItemBackSpace = -64;
 
 - (BOOL)isTheOldestSupportedOperationSystem {
     return [[[UIDevice currentDevice] systemVersion] floatValue] < 9.0;
+}
+
+- (void)setUpFPSTool {
+#if defined(DEBUG)||defined(_DEBUG)
+    [[JPFPSStatus sharedInstance] open];
+#endif
 }
 
 - (void)customUINavigationBarStyle {
